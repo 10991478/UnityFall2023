@@ -148,5 +148,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 5663567731842671521}
   speed: 5
-  jumpHeight: 0
-  jumpSensitivity: 0
+  jumpHeight: 10
+  jumpSensitivity: 0.5

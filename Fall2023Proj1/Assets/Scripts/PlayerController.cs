@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        //horizontal movement controls
         horizontalInput = Input.GetAxis("Horizontal");
         if (horizontalInput != 0)
         {
@@ -29,5 +30,20 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
+
+        //jumping controls
+        if (Input.GetButtonDown("Jump"))
+        {
+            Jump(jumpHeight);
+        }
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0) //making it so holding the button longer makes a longer jump
+        {
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Lerp(rb.velocity.y, 0, jumpSensitivity));
+        }
+    }
+
+    public void Jump(float height)
+    {
+        rb.velocity = new Vector2(rb.velocity.x, height);
     }
 }
