@@ -32,8 +32,9 @@ public class PlayerController : MonoBehaviour
         }
 
         //jumping controls
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
+            Debug.Log(IsGrounded());
             Jump(jumpHeight);
         }
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0) //making it so holding the button longer makes a longer jump
@@ -45,5 +46,11 @@ public class PlayerController : MonoBehaviour
     public void Jump(float height)
     {
         rb.velocity = new Vector2(rb.velocity.x, height);
+    }
+
+    private bool IsGrounded()
+    {
+        bool isGrounded = Physics2D.BoxCast(coll.bounds.center, new Vector2(coll.bounds.size.x*.9f, coll.bounds.size.y*.7f), 0f, Vector2.down, .2f);
+        return isGrounded;
     }
 }
