@@ -32,8 +32,9 @@ public class PlayerController : MonoBehaviour
         }
 
         //jumping controls
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && Grounded())
         {
+            Debug.Log(Grounded());
             Jump(jumpHeight);
         }
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0) //making it so holding the button longer makes a longer jump
@@ -47,9 +48,15 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector3(rb.velocity.x, height, 0);
     }
 
-    private bool IsGrounded()
-    {
-        bool isGrounded = Physics2D.BoxCast(coll.bounds.center, new Vector3(coll.bounds.size.x*.9f, coll.bounds.size.y*.7f), 0f, Vector2.down, .2f);
-        return isGrounded;
+
+    protected bool Grounded() //Got this code from https://forum.unity.com/threads/boxcasting-to-check-grounded.618031/
+{
+        Vector3 boxCenter = coll.bounds.center;
+        Vector3 halfExtents = coll.bounds.extents;
+ 
+        halfExtents.y = .025f;
+        float maxDistance = coll.bounds.extents.y;
+ 
+        return Physics.BoxCast(boxCenter, halfExtents, Vector3.down, transform.rotation, maxDistance);
     }
 }
