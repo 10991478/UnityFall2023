@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
         //jumping controls
         if (Input.GetButtonDown("Jump") && Grounded())
         {
-            Debug.Log(Grounded());
             Jump(jumpHeight);
         }
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0) //making it so holding the button longer makes a longer jump
