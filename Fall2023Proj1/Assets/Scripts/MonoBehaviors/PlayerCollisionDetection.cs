@@ -22,8 +22,7 @@ public class PlayerCollisionDetection : MonoBehaviour
 
     private bool OnTopOfEnemy(Collider enemyCollider){
         Vector3 boxCenter = coll.bounds.center;
-        Vector3 halfExtents = coll.bounds.extents;
-        halfExtents.x *= .9f;
+        Vector3 halfExtents = coll.bounds.extents*0.9f;
  
         halfExtents.y = .025f;
         float maxDistance = coll.bounds.extents.y;

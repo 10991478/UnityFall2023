@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
     protected bool Grounded() //Got this code from https://forum.unity.com/threads/boxcasting-to-check-grounded.618031/
 {
         Vector3 boxCenter = coll.bounds.center;
-        Vector3 halfExtents = coll.bounds.extents;
+        Vector3 halfExtents = coll.bounds.extents*0.9f;
  
         halfExtents.y = .025f;
         float maxDistance = coll.bounds.extents.y;
