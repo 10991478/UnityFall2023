@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965f5ba442aca7944a1f9ffa2b4b9fff, type: 3}
   m_Name: PlayerHealth
   m_EditorClassIdentifier: 
-  value: 0
+  value: 3
   hasUpperBound: 0
-  hasLowerBound: 0
+  hasLowerBound: 1
   lowerBound: 0
   upperBound: 0
   updateValueEvent:

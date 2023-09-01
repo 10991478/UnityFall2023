@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class PlayerCollisionDetection : MonoBehaviour
 {
     private Collider coll;
-    public UnityEvent collideWithEnemy, jumpOnEnemy;
+    public UnityEvent collideWithEnemyEvent, jumpOnEnemyEvent;
     [SerializeField] private ID coinID;
     [SerializeField] private UnityEvent coinEvent;
 
@@ -17,8 +17,13 @@ public class PlayerCollisionDetection : MonoBehaviour
 
     private IEnumerator OnTriggerEnter(Collider other) {
         if (other.gameObject.layer == 6){
-            if (OnTopOfEnemy(other)) jumpOnEnemy.Invoke();
-            else collideWithEnemy.Invoke();
+            if (OnTopOfEnemy(other)){
+                jumpOnEnemyEvent.Invoke();
+                DestroyOtherAndParent(other);
+            }
+            else {
+                collideWithEnemyEvent.Invoke();
+            }
         }
         else if (other.gameObject.layer == 7){
             var tempID = other.GetComponent<IDContainer>().id;
@@ -30,14 +35,14 @@ public class PlayerCollisionDetection : MonoBehaviour
             if (otherID == coinID)
             {
                 coinEvent.Invoke();
-                DestroyOther(other);
+                DestroyOtherAndParent(other);
             }
         }
     }
 
     private bool OnTopOfEnemy(Collider enemyCollider){
         Vector3 boxCenter = coll.bounds.center;
-        Vector3 halfExtents = coll.bounds.extents*0.9f;
+        Vector3 halfExtents = coll.bounds.extents*0.8f;
  
         halfExtents.y = .025f;
         float maxDistance = coll.bounds.extents.y;
@@ -58,5 +63,9 @@ public class PlayerCollisionDetection : MonoBehaviour
 
     public void DestroyOther(Collider other){
         Destroy(other.gameObject);
+    }
+
+    public void DestroyOtherAndParent(Collider other){
+        Destroy(other.transform.parent.gameObject);
     }
 }

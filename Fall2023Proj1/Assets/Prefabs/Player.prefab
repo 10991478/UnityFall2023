@@ -144,36 +144,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a896b80dc5b7dbe4896419bf486eab5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collideWithEnemy:
+  collideWithEnemyEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -6669458572618729299}
-        m_TargetAssemblyTypeName: PlayerCollisionDetection, Assembly-CSharp
-        m_MethodName: TesterMethod
-        m_Mode: 6
+      - m_Target: {fileID: 11400000, guid: be88fc1272311aa4398db03e7f4c413b, type: 2}
+        m_TargetAssemblyTypeName: IntData, Assembly-CSharp
+        m_MethodName: addValue
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: -1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  jumpOnEnemy:
+  jumpOnEnemyEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -6669458572618729299}
-        m_TargetAssemblyTypeName: PlayerCollisionDetection, Assembly-CSharp
-        m_MethodName: TesterMethod
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   coinID: {fileID: 11400000, guid: 1abbe263032fa044b8844dd50ef92760, type: 2}
   coinEvent:
     m_PersistentCalls:
