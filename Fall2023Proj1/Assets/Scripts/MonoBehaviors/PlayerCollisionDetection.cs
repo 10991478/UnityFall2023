@@ -7,16 +7,31 @@ public class PlayerCollisionDetection : MonoBehaviour
 {
     private Collider coll;
     public UnityEvent collideWithEnemy, jumpOnEnemy;
+    [SerializeField] private ID coinID;
+    [SerializeField] private UnityEvent coinEvent;
 
     void Start()
     {
         coll = GetComponent<Collider>();
     }
 
-    private void OnTriggerEnter(Collider other) {
+    private IEnumerator OnTriggerEnter(Collider other) {
         if (other.gameObject.layer == 6){
             if (OnTopOfEnemy(other)) jumpOnEnemy.Invoke();
             else collideWithEnemy.Invoke();
+        }
+        else if (other.gameObject.layer == 7){
+            var tempID = other.GetComponent<IDContainer>().id;
+            if (tempID == null)
+            {
+                yield break;
+            }
+            ID otherID = tempID;
+            if (otherID == coinID)
+            {
+                coinEvent.Invoke();
+                DestroyOther(other);
+            }
         }
     }
 
@@ -39,5 +54,9 @@ public class PlayerCollisionDetection : MonoBehaviour
 
     public void TesterMethod(bool onTop){
         Debug.Log(onTop);
+    }
+
+    public void DestroyOther(Collider other){
+        Destroy(other.gameObject);
     }
 }
