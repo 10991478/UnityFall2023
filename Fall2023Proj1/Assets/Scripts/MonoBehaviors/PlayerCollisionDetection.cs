@@ -9,16 +9,20 @@ public class PlayerCollisionDetection : MonoBehaviour
     public UnityEvent collideWithEnemyEvent, jumpOnEnemyEvent;
     [SerializeField] private ID coinID;
     [SerializeField] private UnityEvent coinEvent;
+    private AudioSource playerAudio;
+    public AudioClip coinSound, killEnemySound;
 
     void Start()
     {
         coll = GetComponent<Collider>();
+        playerAudio = GetComponent<AudioSource>();
     }
 
     private IEnumerator OnTriggerEnter(Collider other) {
         if (other.gameObject.layer == 6){
             if (OnTopOfEnemy(other)){
                 jumpOnEnemyEvent.Invoke();
+                playerAudio.PlayOneShot(killEnemySound, 0.5f);
                 DestroyOtherAndParent(other);
             }
             else {
@@ -35,6 +39,7 @@ public class PlayerCollisionDetection : MonoBehaviour
             if (otherID == coinID)
             {
                 coinEvent.Invoke();
+                playerAudio.PlayOneShot(coinSound, 0.5f);
                 DestroyOtherAndParent(other);
             }
         }

@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Collider coll;
     [SerializeField] private GameObject player;
+    private AudioSource playerAudio;
+    public AudioClip jumpSound;
 
     private float horizontalInput;
     public float speed = 5f;
@@ -16,6 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         coll = GetComponent<Collider>();
+        playerAudio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -44,6 +47,7 @@ public class PlayerController : MonoBehaviour
 
     public void Jump(float height)
     {
+        playerAudio.PlayOneShot(jumpSound, 0.5f);
         rb.velocity = new Vector3(rb.velocity.x, height, 0);
     }
 
