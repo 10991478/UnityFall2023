@@ -16,6 +16,7 @@ public class IntData : ScriptableObject
         updateValueEvent.Invoke();
     }
 
+
     //addValue() adds to value
     /*WHEN ADDING:
         1: If not constrained, add to value
@@ -30,22 +31,26 @@ public class IntData : ScriptableObject
                 if (value + addVal > upperBound)
                 {
                     value = upperBound;
+                    updateValueEvent.Invoke();
                     aboveMaxEvent.Invoke();
                 }
                 else
                 {
                     value += addVal;
+                    updateValueEvent.Invoke();
                 }
             }
             if (hasLowerBound){
                 if (value + addVal < lowerBound)
                 {
                     value = lowerBound;
+                    updateValueEvent.Invoke();
                     belowMinEvent.Invoke();
                 }
                 else
                 {
                     value += addVal;
+                    updateValueEvent.Invoke();
                 }
             }
         }

@@ -19,7 +19,19 @@ MonoBehaviour:
   upperBound: 0
   updateValueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2065890898964525875, guid: f1f5bae688f7691438f008621d4b8580, type: 3}
+        m_TargetAssemblyTypeName: DisplayManagerBehavior, Assembly-CSharp
+        m_MethodName: UpdateHealthText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   belowMinEvent:
     m_PersistentCalls:
       m_Calls: []
