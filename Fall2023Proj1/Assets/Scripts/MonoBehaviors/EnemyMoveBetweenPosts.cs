@@ -9,34 +9,38 @@ public class EnemyMoveBetweenPosts : MonoBehaviour
     public float speed = 2f;
     public bool x, y, z;
     private int direction = -1;
+    [System.NonSerialized] public bool moving = true;
 
 
     void Update()
     {
-        if (CloseToPost(0.1f))
+        if (moving)
         {
-            if (currentPost == posts.Length - 1 || currentPost == 0)
+            if (CloseToPost(0.1f))
             {
-                direction *= -1;
+                if (currentPost == posts.Length - 1 || currentPost == 0)
+                {
+                    direction *= -1;
+                }
+                if (currentPost >= posts.Length)
+                {
+                    currentPost = posts.Length - 1;
+                    direction = -1;
+                }
+                if (currentPost < 0)
+                {
+                    currentPost = 0;
+                    direction = 1;
+                }
+                currentPost += direction;
             }
-            if (currentPost >= posts.Length)
-            {
-                currentPost = posts.Length - 1;
-                direction = -1;
-            }
-            if (currentPost < 0)
-            {
-                currentPost = 0;
-                direction = 1;
-            }
-            currentPost += direction;
+            Vector3 targetPosition = posts[currentPost].transform.position;
+            if (!x) targetPosition.x = transform.position.x;
+            if (!y) targetPosition.y = transform.position.y;
+            if (!z) targetPosition.z = transform.position.z;
+            Vector3 newPos = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            transform.position = newPos;
         }
-        Vector3 targetPosition = posts[currentPost].transform.position;
-        if (!x) targetPosition.x = transform.position.x;
-        if (!y) targetPosition.y = transform.position.y;
-        if (!z) targetPosition.z = transform.position.z;
-        Vector3 newPos = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-        transform.position = newPos;
     }
 
     private bool CloseToPost(float range)
