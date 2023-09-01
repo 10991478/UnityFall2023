@@ -58,4 +58,8 @@ public class IntData : ScriptableObject
             value += addVal;
         }
     }
+
+    public void IncrementValue(){
+        addValue(1);
+    }
 }
