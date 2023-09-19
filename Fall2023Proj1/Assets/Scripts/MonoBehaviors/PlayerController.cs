@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Collider coll;
     [SerializeField] private GameObject player;
+    private AudioSource playerAudio;
+    public AudioClip jumpSound;
 
     private float horizontalInput;
     public float speed = 5f;
@@ -16,6 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         coll = GetComponent<Collider>();
+        playerAudio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -44,6 +47,7 @@ public class PlayerController : MonoBehaviour
 
     public void Jump(float height)
     {
+        playerAudio.PlayOneShot(jumpSound, 0.5f);
         rb.velocity = new Vector3(rb.velocity.x, height, 0);
     }
 
@@ -51,7 +55,7 @@ public class PlayerController : MonoBehaviour
     protected bool Grounded() //Got this code from https://forum.unity.com/threads/boxcasting-to-check-grounded.618031/
 {
         Vector3 boxCenter = coll.bounds.center;
-        Vector3 halfExtents = coll.bounds.extents;
+        Vector3 halfExtents = coll.bounds.extents*0.9f;
  
         halfExtents.y = .025f;
         float maxDistance = coll.bounds.extents.y;
