@@ -698,6 +698,82 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9712e103a5c8e0544bf0fb3863e7e18e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &345022823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345022821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fede7d915da5264d99412b8aea39b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 11400000, guid: 1514aa0c7671ada4dbf3905b7bb36ce5, type: 2}
+  startEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  respondEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 345022822}
+        m_TargetAssemblyTypeName: DisplayManagerBehavior, Assembly-CSharp
+        m_MethodName: UpdateCoinsText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  respondLateEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  runInAnimatorEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  holdTime: 0.1
+--- !u!114 &345022825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345022821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fede7d915da5264d99412b8aea39b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 11400000, guid: 93def7e29ab82084f8115b9223cb73e4, type: 2}
+  startEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  respondEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 345022822}
+        m_TargetAssemblyTypeName: DisplayManagerBehavior, Assembly-CSharp
+        m_MethodName: UpdateHealthText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  respondLateEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  runInAnimatorEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  holdTime: 0.1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
