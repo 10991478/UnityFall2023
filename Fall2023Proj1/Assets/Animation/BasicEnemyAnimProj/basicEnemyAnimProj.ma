@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: basicEnemyAnimProj.ma
-//Last modified: Mon, Sep 25, 2023 10:44:30 PM
+//Last modified: Mon, Sep 25, 2023 10:46:25 PM
 //Codeset: 1252
 requires maya "2024";
 requires "stereoCamera" "10.0";
@@ -11,7 +11,7 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202304191415-7fa20164c6";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "899B9149-4042-2366-B09E-53AD514E4498";
+fileInfo "UUID" "B1D78D91-4924-B416-CC9D-658AF790D1BE";
 createNode transform -n "AniM_walker_Main";
 	rename -uid "5B58CD6D-4A11-D29B-1D14-469C7E0C1B77";
 	setAttr -l on -k off ".v";
@@ -2306,7 +2306,7 @@ createNode joint -n "walker_rt_knee_ik_jnt" -p "walker_rt_upLeg_ik_jnt";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 28;
 	setAttr ".t" -type "double3" -0.98861998319625854 2.236124210797108e-08 4.4408920985006262e-16 ;
-	setAttr ".r" -type "double3" -4.0967321277169886e-15 -1.4557133162767728e-13 16.229072368729472 ;
+	setAttr ".r" -type "double3" -4.0967321277169902e-15 -1.4557133162767728e-13 16.229072368729472 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 0 4.4814151967255551 ;
