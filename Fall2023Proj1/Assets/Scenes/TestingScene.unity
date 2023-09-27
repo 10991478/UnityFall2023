@@ -212,48 +212,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 41f68177b388d0e4fa438b143e213fe5, type: 3}
   m_PrefabInstance: {fileID: 2004853142}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &861354125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 861354122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f14fb4796c019b848a7fcddbb1faa144, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rightEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 861354126}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: RegularWalk
-          m_BoolArgument: 0
-        m_CallState: 2
-  shiftRightEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 861354126}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: SneakyWalk
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!95 &861354126
 Animator:
   serializedVersion: 5
@@ -275,6 +233,111 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &861354127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861354122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d09a3aab7f0cb494d89f4a02928650fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressRightEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 861354127}
+        m_TargetAssemblyTypeName: PlayerAnimController, Assembly-CSharp
+        m_MethodName: FaceRight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  pressLeftEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 861354127}
+        m_TargetAssemblyTypeName: PlayerAnimController, Assembly-CSharp
+        m_MethodName: FaceLeft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  pressShiftEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  regularWalkEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 861354126}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: RegularWalk
+          m_BoolArgument: 0
+        m_CallState: 2
+  sneakWalkEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 861354126}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SneakWalk
+          m_BoolArgument: 0
+        m_CallState: 2
+  justSneakEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 861354126}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Idle
+          m_BoolArgument: 0
+        m_CallState: 2
+  idleEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 861354126}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Idle
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1596410707
 GameObject:
   m_ObjectHideFlags: 0
