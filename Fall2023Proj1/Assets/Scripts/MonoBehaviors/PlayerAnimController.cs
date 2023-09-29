@@ -17,6 +17,7 @@ public class PlayerAnimController : MonoBehaviour
     {
         animStates.Add("Walking", false);
         animStates.Add("Sneaking", false);
+        FaceRight();
     }
 
     // Update is called once per frame
@@ -94,10 +95,10 @@ public class PlayerAnimController : MonoBehaviour
     /*These face right/left methods are just to turn the model to face
     whatever direction when I press the left/right buttons*/
     public void FaceRight(){
-        transform.rotation = Quaternion.Euler(0, -60, 0);
+        transform.rotation = Quaternion.Euler(0, -75, 0);
     }
 
     public void FaceLeft(){
-        transform.rotation = Quaternion.Euler(0, 60, 0);
+        transform.rotation = Quaternion.Euler(0, 75, 0);
     }
 }

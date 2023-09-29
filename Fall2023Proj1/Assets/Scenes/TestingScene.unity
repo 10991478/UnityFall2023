@@ -308,7 +308,7 @@ MonoBehaviour:
           m_StringArgument: SneakWalk
           m_BoolArgument: 0
         m_CallState: 2
-  justSneakEvent:
+  sneakIdleEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 861354126}
@@ -320,7 +320,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Idle
+          m_StringArgument: SneakIdle
           m_BoolArgument: 0
         m_CallState: 2
   idleEvent:
