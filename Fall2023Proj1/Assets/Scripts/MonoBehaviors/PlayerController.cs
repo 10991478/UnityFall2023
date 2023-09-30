@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,11 +15,15 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;
     public float jumpHeight,jumpSensitivity;
 
+    private float currentVerticalVelocity, previousVerticalVelocity;
+    [SerializeField] private UnityEvent startToFallEvent, landEvent;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         coll = GetComponent<Collider>();
         playerAudio = GetComponent<AudioSource>();
+        currentVerticalVelocity = 0;
     }
 
     void Update()
@@ -33,14 +38,31 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector3(0, rb.velocity.y, 0);
         }
+
+        previousVerticalVelocity = currentVerticalVelocity;
+        currentVerticalVelocity = rb.velocity.y;
+
+        if (currentVerticalVelocity < 0 && previousVerticalVelocity >= 0){
+            startToFallEvent.Invoke();
+            Debug.Log("Falling");
+        }
+
+        if (currentVerticalVelocity == 0 && previousVerticalVelocity < 0){
+            if (Grounded()) landEvent.Invoke();
+            Debug.Log("Landed");
+        }
     }
 
     public void Jump(float height)
     {
         if (Grounded()){
-            playerAudio.PlayOneShot(jumpSound, 0.5f);
+            JumpSound(0.5f);
             rb.velocity = new Vector3(rb.velocity.x, height, 0);
         }
+    }
+
+    public void JumpSound(float volume){
+        playerAudio.PlayOneShot(jumpSound, volume);
     }
 
 
