@@ -33,22 +33,14 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector3(0, rb.velocity.y, 0);
         }
-
-        //jumping controls
-        if (Input.GetButtonDown("Jump") && Grounded())
-        {
-            Jump(jumpHeight);
-        }
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0) //making it so holding the button longer makes a longer jump
-        {
-            rb.velocity = new Vector3(rb.velocity.x, Mathf.Lerp(rb.velocity.y, 0, jumpSensitivity), 0);
-        }
     }
 
     public void Jump(float height)
     {
-        playerAudio.PlayOneShot(jumpSound, 0.5f);
-        rb.velocity = new Vector3(rb.velocity.x, height, 0);
+        if (Grounded()){
+            playerAudio.PlayOneShot(jumpSound, 0.5f);
+            rb.velocity = new Vector3(rb.velocity.x, height, 0);
+        }
     }
 
 
