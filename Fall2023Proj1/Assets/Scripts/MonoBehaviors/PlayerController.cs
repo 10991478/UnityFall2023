@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     private float currentVerticalVelocity, previousVerticalVelocity;
     [SerializeField] private UnityEvent startToFallEvent, landEvent;
 
+    [SerializeField] private BoolData gameOver;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -28,28 +30,30 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //horizontal movement controls
-        horizontalInput = Input.GetAxis("Horizontal");
-        if (horizontalInput != 0)
-        {
-            rb.velocity = new Vector3(horizontalInput * speed, rb.velocity.y, 0);
-        }
-        else
-        {
-            rb.velocity = new Vector3(0, rb.velocity.y, 0);
-        }
+        if (!gameOver.value){
+            //horizontal movement controls
+            horizontalInput = Input.GetAxis("Horizontal");
+            if (horizontalInput != 0)
+            {
+                rb.velocity = new Vector3(horizontalInput * speed, rb.velocity.y, 0);
+            }
+            else
+            {
+                rb.velocity = new Vector3(0, rb.velocity.y, 0);
+            }
 
-        previousVerticalVelocity = currentVerticalVelocity;
-        currentVerticalVelocity = rb.velocity.y;
+            previousVerticalVelocity = currentVerticalVelocity;
+            currentVerticalVelocity = rb.velocity.y;
 
-        if (currentVerticalVelocity < 0 && previousVerticalVelocity >= 0){
-            startToFallEvent.Invoke();
-            Debug.Log("Falling");
-        }
+            if (currentVerticalVelocity < 0 && previousVerticalVelocity >= 0){
+                startToFallEvent.Invoke();
+                Debug.Log("Falling");
+            }
 
-        if (currentVerticalVelocity == 0 && previousVerticalVelocity < 0){
-            if (Grounded()) landEvent.Invoke();
-            Debug.Log("Landed");
+            if (currentVerticalVelocity == 0 && previousVerticalVelocity < 0){
+                if (Grounded()) landEvent.Invoke();
+                Debug.Log("Landed");
+            }
         }
     }
 
@@ -61,12 +65,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Jump(){
+        if (Grounded()){
+            JumpSound(0.5f);
+            rb.velocity = new Vector3(rb.velocity.x, jumpHeight, 0);
+        }
+    }
+
     public void JumpSound(float volume){
         playerAudio.PlayOneShot(jumpSound, volume);
     }
 
 
-    protected bool Grounded() //Got this code from https://forum.unity.com/threads/boxcasting-to-check-grounded.618031/
+    protected bool Grounded() //Got this function from https://forum.unity.com/threads/boxcasting-to-check-grounded.618031/
 {
         Vector3 boxCenter = coll.bounds.center;
         Vector3 halfExtents = coll.bounds.extents*0.9f;

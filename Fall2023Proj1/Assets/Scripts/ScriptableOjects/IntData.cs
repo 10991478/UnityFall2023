@@ -9,7 +9,7 @@ public class IntData : ScriptableObject
     public int lowerBound; //lower limit for value if hasLowerBound is true
     public int upperBound; //upper limit for value if hasUpperBound is true
 
-    public UnityEvent updateValueEvent, belowMinEvent, aboveMaxEvent;
+    public UnityEvent updateValueEvent, atOrBelowMinEvent, atOrAboveMaxEvent;
 
     public void setValue(int newVal){
         value = newVal;
@@ -28,11 +28,11 @@ public class IntData : ScriptableObject
         {
             if (hasUpperBound)
             {
-                if (value + addVal > upperBound)
+                if (value + addVal >= upperBound)
                 {
                     value = upperBound;
                     updateValueEvent.Invoke();
-                    aboveMaxEvent.Invoke();
+                    atOrAboveMaxEvent.Invoke();
                 }
                 else
                 {
@@ -41,11 +41,11 @@ public class IntData : ScriptableObject
                 }
             }
             if (hasLowerBound){
-                if (value + addVal < lowerBound)
+                if (value + addVal <= lowerBound)
                 {
                     value = lowerBound;
                     updateValueEvent.Invoke();
-                    belowMinEvent.Invoke();
+                    atOrBelowMinEvent.Invoke();
                 }
                 else
                 {
@@ -61,5 +61,11 @@ public class IntData : ScriptableObject
 
     public void IncrementValue(){
         addValue(1);
+    }
+
+    
+
+    public void TempDebugMethod(string words){
+        Debug.Log(words);
     }
 }

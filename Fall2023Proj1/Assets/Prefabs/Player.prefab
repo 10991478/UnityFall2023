@@ -81,15 +81,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2118390527383745672}
   jumpSound: {fileID: 8300000, guid: bf65826e1f87f1f46a0eb5e2d4c80443, type: 3}
-  speed: 5
-  jumpHeight: 10
+  speed: 7.5
+  jumpHeight: 15
   jumpSensitivity: 0.5
   startToFallEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 01a8435b91201404cabf1c424dc2a8e6, type: 2}
-        m_TargetAssemblyTypeName: GameAction, Assembly-CSharp
-        m_MethodName: RaiseAction
+      - m_Target: {fileID: 2118390529191337396}
+        m_TargetAssemblyTypeName: PlayerAnimController, Assembly-CSharp
+        m_MethodName: Fall
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -102,9 +102,9 @@ MonoBehaviour:
   landEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: d8920529a4bb79549a74a51fdee92cbd, type: 2}
-        m_TargetAssemblyTypeName: GameAction, Assembly-CSharp
-        m_MethodName: RaiseAction
+      - m_Target: {fileID: 2118390529191337396}
+        m_TargetAssemblyTypeName: PlayerAnimController, Assembly-CSharp
+        m_MethodName: Land
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -114,6 +114,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  gameOver: {fileID: 11400000, guid: cbf184b9bfedb89438453aab1ce0f67e, type: 2}
 --- !u!114 &2118390527383745670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,16 +129,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collideWithEnemyEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: be88fc1272311aa4398db03e7f4c413b, type: 2}
+        m_TargetAssemblyTypeName: IntData, Assembly-CSharp
+        m_MethodName: addValue
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   jumpOnEnemyEvent:
     m_PersistentCalls:
       m_Calls: []
-  coinID: {fileID: 0}
+  coinID: {fileID: 11400000, guid: 1abbe263032fa044b8844dd50ef92760, type: 2}
   coinEvent:
     m_PersistentCalls:
-      m_Calls: []
-  coinSound: {fileID: 0}
-  killEnemySound: {fileID: 0}
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 885d8adf75b3c654da1dd38796d00b3e, type: 2}
+        m_TargetAssemblyTypeName: IntData, Assembly-CSharp
+        m_MethodName: IncrementValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  coinSound: {fileID: 8300000, guid: 11d4ed79bdc04d14b87b6dbbf81c0e8c, type: 3}
+  killEnemySound: {fileID: 8300000, guid: 853da84bda82dbd4595b8e1cd8b7aea1, type: 3}
+  gameOver: {fileID: 11400000, guid: cbf184b9bfedb89438453aab1ce0f67e, type: 2}
 --- !u!82 &2118390527383745673
 AudioSource:
   m_ObjectHideFlags: 0
@@ -256,7 +282,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2118390527383745671}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: Jump
-        m_Mode: 4
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -514,7 +540,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: JumpDown
+          m_StringArgument: Fall
           m_BoolArgument: 0
         m_CallState: 2
   landEvent:
@@ -532,45 +558,23 @@ MonoBehaviour:
           m_StringArgument: Land
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8883111105401109158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1272092243069194369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fede7d915da5264d99412b8aea39b17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  action: {fileID: 11400000, guid: 01a8435b91201404cabf1c424dc2a8e6, type: 2}
-  startEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  respondEvent:
+  dieEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2118390529191337396}
-        m_TargetAssemblyTypeName: PlayerAnimController, Assembly-CSharp
-        m_MethodName: Fall
-        m_Mode: 1
+      - m_Target: {fileID: 2118390529191337397}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Die
           m_BoolArgument: 0
         m_CallState: 2
-  respondLateEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  runInAnimatorEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  holdTime: 0.1
---- !u!114 &4773912616903632745
+  gameOver: {fileID: 11400000, guid: cbf184b9bfedb89438453aab1ce0f67e, type: 2}
+--- !u!114 &5885046862019807576
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -582,7 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fede7d915da5264d99412b8aea39b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  action: {fileID: 11400000, guid: d8920529a4bb79549a74a51fdee92cbd, type: 2}
+  action: {fileID: 11400000, guid: 968527458413d554e8155a55e1b18cf1, type: 2}
   startEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -591,7 +595,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2118390529191337396}
         m_TargetAssemblyTypeName: PlayerAnimController, Assembly-CSharp
-        m_MethodName: Land
+        m_MethodName: Die
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

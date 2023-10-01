@@ -12,6 +12,8 @@ public class PlayerCollisionDetection : MonoBehaviour
     private AudioSource playerAudio;
     public AudioClip coinSound, killEnemySound;
 
+    [SerializeField] private BoolData gameOver;
+
     void Start()
     {
         coll = GetComponent<Collider>();

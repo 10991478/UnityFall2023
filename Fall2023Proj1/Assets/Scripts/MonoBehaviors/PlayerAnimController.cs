@@ -7,9 +7,11 @@ public class PlayerAnimController : MonoBehaviour
 {
     [SerializeField] private UnityEvent pressRightEvent, pressLeftEvent;
     [SerializeField] private UnityEvent regularWalkEvent, sneakWalkEvent, runEvent, sneakIdleEvent, idleEvent,
-        crouchEvent, extendEvent, fallEvent, landEvent;
+        crouchEvent, extendEvent, fallEvent, landEvent, dieEvent;
 
     IDictionary<string, bool> animStates = new Dictionary<string, bool>();
+
+    [SerializeField] private BoolData gameOver;
 
     void Awake()
     {
@@ -24,7 +26,7 @@ public class PlayerAnimController : MonoBehaviour
 
     void Update()
     {
-        if (animStates["Grounded"]){
+        if (animStates["Grounded"] && !gameOver.value){
     //Right button
             if (Input.GetKeyDown("right")){
                 animStates["Walking"] = true;
@@ -68,6 +70,7 @@ public class PlayerAnimController : MonoBehaviour
     //Jump button
             if (Input.GetButtonDown("Jump")){
                 animStates["Crouching"] = true;
+                animStates["Grounded"] = true;
                 Debug.Log(UpdateAnimState());
             }
             if (Input.GetButtonUp("Jump")){
@@ -135,5 +138,9 @@ public class PlayerAnimController : MonoBehaviour
     public void Land(){
         landEvent.Invoke();
         animStates["Grounded"] = true;
+    }
+
+    public void Die(){
+        dieEvent.Invoke();
     }
 }
