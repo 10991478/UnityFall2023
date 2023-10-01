@@ -26,96 +26,100 @@ public class PlayerAnimController : MonoBehaviour
 
     void Update()
     {
-        if (animStates["Grounded"] && !gameOver.value){
+        if (!gameOver.value){
     //Right button
             if (Input.GetKeyDown("right")){
                 animStates["Walking"] = true;
                 pressRightEvent.Invoke();
-                Debug.Log(UpdateAnimState());
+                if (animStates["Grounded"]) UpdateAnimState();
             }
             if (Input.GetKeyUp("right")){
                 if (!Input.GetKey("left")) animStates["Walking"] = false;
-                Debug.Log(UpdateAnimState());
+                if (animStates["Grounded"]) UpdateAnimState();
             }
     //Left button
             if (Input.GetKeyDown("left")){
                 animStates["Walking"] = true;
                 pressLeftEvent.Invoke();
-                Debug.Log(UpdateAnimState());
+                if (animStates["Grounded"]) UpdateAnimState();
             }
             if (Input.GetKeyUp("left")){
                 if (!Input.GetKey("right")) animStates["Walking"] = false;
-                Debug.Log(UpdateAnimState());
+                if (animStates["Grounded"]) UpdateAnimState();
             }
     //Left shift button
             if (Input.GetKeyDown(KeyCode.LeftShift)){
                 animStates["Running"] = false;
                 animStates["Sneaking"] = true;
-                Debug.Log(UpdateAnimState());
+                if (animStates["Grounded"]) UpdateAnimState();
             }
             if (Input.GetKeyUp(KeyCode.LeftShift)){
                 animStates["Sneaking"] = false;
-                Debug.Log(UpdateAnimState());
+                if (animStates["Grounded"]) UpdateAnimState();
             }
     //Left control button
             if (Input.GetKeyDown(KeyCode.LeftControl)){
                 animStates["Sneaking"] = false;
                 animStates["Running"] = true;
-                Debug.Log(UpdateAnimState());
+                if (animStates["Grounded"]) UpdateAnimState();
             }
             if (Input.GetKeyUp(KeyCode.LeftControl)){
                 animStates["Running"] = false;
-                Debug.Log(UpdateAnimState());
+                if (animStates["Grounded"]) UpdateAnimState();
             }
     //Jump button
             if (Input.GetButtonDown("Jump")){
-                animStates["Crouching"] = true;
-                animStates["Grounded"] = true;
-                Debug.Log(UpdateAnimState());
+                if (animStates["Grounded"]) {
+                    animStates["Crouching"] = true;
+                    animStates["Grounded"] = true;
+                    UpdateAnimState();
+                }
             }
             if (Input.GetButtonUp("Jump")){
-                animStates["Crouching"] = false;
-                animStates["Extending"] = true;
-                Debug.Log(UpdateAnimState());
-                animStates["Grounded"] = false;
+                if (animStates["Grounded"]){
+                    animStates["Crouching"] = false;
+                    animStates["Extending"] = true;
+                    UpdateAnimState();
+                    animStates["Grounded"] = false;
+                }
             }
         }
     }
 
 
 
-    public string UpdateAnimState(){
+    public void UpdateAnimState(){
         if (animStates["Crouching"]){
             crouchEvent.Invoke();
-            return "crouchEvent";
+            return;
         }
         else if (animStates["Extending"]){
             extendEvent.Invoke();
             animStates["Extending"] = false;
-            return "extendEvent";
+            return;
         }
         if (animStates["Walking"]){
             if (animStates["Sneaking"]){
                 sneakWalkEvent.Invoke();
-                return "sneakWalkEvent";
+                return;
             }
             else if (animStates["Running"]){
                 runEvent.Invoke();
-                return "runEvent";
+                return;
             }
             else {
                 regularWalkEvent.Invoke();
-                return "regularWalkEvent";
+                return;
             }
         }
         else {
             if (animStates["Sneaking"]){
                 sneakIdleEvent.Invoke();
-                return "sneakIdleEvent";
+                return;
             }
             else {
                 idleEvent.Invoke();
-                return "idleEvent";
+                return;
             }
         }
     }

@@ -14,7 +14,11 @@ GameObject:
   - component: {fileID: 2118390527383745671}
   - component: {fileID: 2118390527383745670}
   - component: {fileID: 2118390527383745673}
-  - component: {fileID: 7708944345142361742}
+  - component: {fileID: 6748594601577018674}
+  - component: {fileID: 6385349503484617378}
+  - component: {fileID: 2410650526745620697}
+  - component: {fileID: 4278412738460998068}
+  - component: {fileID: 3523351719248102757}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -81,9 +85,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2118390527383745672}
   jumpSound: {fileID: 8300000, guid: bf65826e1f87f1f46a0eb5e2d4c80443, type: 3}
-  speed: 7.5
+  speed: 4.5
   jumpHeight: 15
-  jumpSensitivity: 0.5
   startToFallEvent:
     m_PersistentCalls:
       m_Calls:
@@ -260,7 +263,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7708944345142361742
+--- !u!114 &6748594601577018674
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -269,13 +272,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2118390527383745672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fede7d915da5264d99412b8aea39b17, type: 3}
+  m_Script: {fileID: 11500000, guid: a102fba678a5ba44e867a8eb2abada0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   action: {fileID: 11400000, guid: 76e69dae43430644986d143b5f431c0d, type: 2}
-  startEvent:
-    m_PersistentCalls:
-      m_Calls: []
   respondEvent:
     m_PersistentCalls:
       m_Calls:
@@ -287,17 +287,122 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 15
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  respondLateEvent:
+--- !u!114 &6385349503484617378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118390527383745672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a102fba678a5ba44e867a8eb2abada0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 11400000, guid: 968527458413d554e8155a55e1b18cf1, type: 2}
+  respondEvent:
     m_PersistentCalls:
-      m_Calls: []
-  runInAnimatorEvent:
+      m_Calls:
+      - m_Target: {fileID: 2118390527383745671}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: DeactivatePhysics
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2410650526745620697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118390527383745672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a102fba678a5ba44e867a8eb2abada0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 11400000, guid: a47c79e75fbfd7a4aa301bf76122f1cd, type: 2}
+  respondEvent:
     m_PersistentCalls:
-      m_Calls: []
-  holdTime: 0.1
+      m_Calls:
+      - m_Target: {fileID: 2118390527383745671}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: SetSpeedMultiplier
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4278412738460998068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118390527383745672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a102fba678a5ba44e867a8eb2abada0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 11400000, guid: 76ace58aad8c7e54788f0a34c9f7ce77, type: 2}
+  respondEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2118390527383745671}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: SetSpeedMultiplier
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3523351719248102757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118390527383745672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a102fba678a5ba44e867a8eb2abada0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 11400000, guid: 093b027d62cfa9f4391866d0c4ee81f2, type: 2}
+  respondEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2118390527383745671}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: SetSpeedMultiplier
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2118390528883453392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -574,7 +679,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   gameOver: {fileID: 11400000, guid: cbf184b9bfedb89438453aab1ce0f67e, type: 2}
---- !u!114 &5885046862019807576
+--- !u!114 &1722223089735034379
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -583,13 +688,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1272092243069194369}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fede7d915da5264d99412b8aea39b17, type: 3}
+  m_Script: {fileID: 11500000, guid: a102fba678a5ba44e867a8eb2abada0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   action: {fileID: 11400000, guid: 968527458413d554e8155a55e1b18cf1, type: 2}
-  startEvent:
-    m_PersistentCalls:
-      m_Calls: []
   respondEvent:
     m_PersistentCalls:
       m_Calls:
@@ -605,13 +707,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  respondLateEvent:
+--- !u!114 &5220309169062134161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272092243069194369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a102fba678a5ba44e867a8eb2abada0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 11400000, guid: cd422e52416d9f343a04ad4d0fe99fe6, type: 2}
+  respondEvent:
     m_PersistentCalls:
-      m_Calls: []
-  runInAnimatorEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  holdTime: 0.1
+      m_Calls:
+      - m_Target: {fileID: 2118390529191337396}
+        m_TargetAssemblyTypeName: PlayerAnimController, Assembly-CSharp
+        m_MethodName: UpdateAnimState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1940120750704495163 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 41f68177b388d0e4fa438b143e213fe5, type: 3}

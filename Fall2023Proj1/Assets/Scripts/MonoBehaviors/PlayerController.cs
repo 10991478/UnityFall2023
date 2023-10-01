@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip jumpSound;
 
     private float horizontalInput;
-    public float speed = 5f;
-    public float jumpHeight,jumpSensitivity;
+    [SerializeField] private float speed, jumpHeight;
+    private float speedMultiplier = 1;
 
     private float currentVerticalVelocity, previousVerticalVelocity;
     [SerializeField] private UnityEvent startToFallEvent, landEvent;
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
             horizontalInput = Input.GetAxis("Horizontal");
             if (horizontalInput != 0)
             {
-                rb.velocity = new Vector3(horizontalInput * speed, rb.velocity.y, 0);
+                rb.velocity = new Vector3(horizontalInput * speed * speedMultiplier, rb.velocity.y, 0);
             }
             else
             {
@@ -86,5 +86,14 @@ public class PlayerController : MonoBehaviour
         float maxDistance = coll.bounds.extents.y;
  
         return Physics.BoxCast(boxCenter, halfExtents, Vector3.down, transform.rotation, maxDistance);
+    }
+
+    public void DeactivatePhysics(){
+        rb.isKinematic = true;
+        coll.enabled = false;
+    }
+
+    public void SetSpeedMultiplier(float mult){
+        speedMultiplier = mult;
     }
 }
