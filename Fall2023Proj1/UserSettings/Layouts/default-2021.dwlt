@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1280
     height: 637.3334
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 492}
   m_MaxSize: {x: 10000, y: 10000}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 149
+  controlID: 68
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 74
+  controlID: 149
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -311,14 +311,14 @@ MonoBehaviour:
     m_KeySerializationHelper:
     - {fileID: 6406800070896470549, guid: 95396d739685fad48921c08b424eef88, type: 2}
     m_ValueSerializationHelper:
-    - e00: 0.48121387
+    - e00: 0.34016782
       e01: 0
       e02: 0
-      e03: 42.678513
+      e03: 78.83933
       e10: 0
-      e11: 0.48121387
+      e11: 0.34016782
       e12: 0
-      e13: 176.68118
+      e13: 83.88013
       e20: 0
       e21: 0
       e22: 1
@@ -375,9 +375,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 80670000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 58a3ffffdaf4ffff
+      m_SelectedIDs: 40f7ffff
+      m_LastClickedID: -2240
+      m_ExpandedIDs: 50faffff28fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -437,7 +437,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 161.33331
+  m_LastVerticalScrollValue: 96.66666
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -485,22 +485,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Animation/PlayerAnimProj
+    - Assets/ScriptableObjects
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Animation/PlayerAnimProj
+  - Assets/ScriptableObjects
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\GitHubStuff\University\UnityFall2023\Fall2023Proj1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1c680000
-    m_LastClickedID: 26652
-    m_ExpandedIDs: 00000000fa670000fc670000fe670000006800002a68000000ca9a3b
+    m_SelectedIDs: 2c680000
+    m_LastClickedID: 26668
+    m_ExpandedIDs: 000000002468000026680000286800002a6800002c68000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -528,7 +528,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fa670000fc670000fe67000000680000
+    m_ExpandedIDs: 000000002468000026680000286800002a6800002c680000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -580,7 +580,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 1175.6667}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 129.66663
