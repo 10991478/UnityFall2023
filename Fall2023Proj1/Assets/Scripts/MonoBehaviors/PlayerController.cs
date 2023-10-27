@@ -77,8 +77,8 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    protected bool Grounded() //Got this function from https://forum.unity.com/threads/boxcasting-to-check-grounded.618031/
-{
+//Got this function from https://forum.unity.com/threads/boxcasting-to-check-grounded.618031/
+    protected bool Grounded() {
         Vector3 boxCenter = coll.bounds.center;
         Vector3 halfExtents = coll.bounds.extents*0.9f;
  
