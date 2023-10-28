@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: RobotAnimationProject.ma
-//Last modified: Sat, Oct 28, 2023 11:29:09 AM
+//Last modified: Sat, Oct 28, 2023 12:09:25 PM
 //Codeset: 1252
 file -rdi 1 -ns "PALBot" -rfn "PALBotRN" -op "v=0;" -typ "mayaAscii" "D:/GitHubStuff/University/UnityFall2023/Fall2023Proj1/Assets/Animation/RobotAnimProj/PALBOT/PALBOT/scenes//PALBot.ma";
 file -r -ns "PALBot" -dr 1 -rfn "PALBotRN" -op "v=0;" -typ "mayaAscii" "D:/GitHubStuff/University/UnityFall2023/Fall2023Proj1/Assets/Animation/RobotAnimProj/PALBOT/PALBOT/scenes//PALBot.ma";
@@ -14,21 +14,21 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202304191415-7fa20164c6";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "C173C782-4316-80FE-927F-FC9D7F5FB75A";
+fileInfo "UUID" "703943F6-4E88-45C9-CC1F-EDAA80A0106B";
 createNode transform -s -n "persp";
 	rename -uid "E031FCE0-4CB5-5A03-1C0D-B0BE22E887B7";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -40.248706018121247 29.826790743672589 39.793091361340409 ;
-	setAttr ".r" -type "double3" -15.938352724968489 -2203.4000000000588 -1.0943660743142184e-15 ;
+	setAttr ".t" -type "double3" -61.189450992647714 7.8410949204682767 14.46724684391544 ;
+	setAttr ".r" -type "double3" -0.93835272491059252 -2237.3999999999201 -4.5562875640248139e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "8381CB6D-4F56-975A-D9FC-08A408E756F7";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 59.973433324474655;
+	setAttr ".coi" 62.338344401115364;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -5.6409305433382144 11.422818028620128 3.0261441320145095 ;
+	setAttr ".tp" -type "double3" -3.364269029038828 -0.095326681073451131 3.0599538170051495 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "21AFAC74-4C2D-986B-0E16-5EBC11CA35B0";
@@ -146,7 +146,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 98\n            -height 0\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -docTag \"RADRENDER\" \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1.5\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n"
 		+ "            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 4 4 \n            -bumpResolution 4 4 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 0\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n"
-		+ "            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1233\n            -height 507\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n"
+		+ "            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1233\n            -height 535\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n"
 		+ "            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n"
 		+ "            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n"
 		+ "            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n"
@@ -176,13 +176,13 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n"
 		+ "            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n"
 		+ "\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -docTag \\\"RADRENDER\\\" \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1.5\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 4 4 \\n    -bumpResolution 4 4 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 0\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1233\\n    -height 507\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -docTag \\\"RADRENDER\\\" \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1.5\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 4 4 \\n    -bumpResolution 4 4 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 0\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1233\\n    -height 507\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -docTag \\\"RADRENDER\\\" \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1.5\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 4 4 \\n    -bumpResolution 4 4 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 0\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1233\\n    -height 535\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -docTag \\\"RADRENDER\\\" \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1.5\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 4 4 \\n    -bumpResolution 4 4 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 0\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1233\\n    -height 535\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "EC1B25CC-4807-E78B-4FA6-C98C18E5DA61";
-	setAttr ".b" -type "string" "playbackOptions -min 300 -max 345 -ast 200 -aet 400 ";
+	setAttr ".b" -type "string" "playbackOptions -min 300 -max 356 -ast 200 -aet 400 ";
 	setAttr ".st" 6;
 createNode reference -n "PALBotRN";
 	rename -uid "D1307779-4782-EBC3-BF5A-0BB746912220";
@@ -565,855 +565,13 @@ createNode reference -n "PALBotRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"PALBotRN"
 		"PALBotRN" 0
-		"PALBotRN" 801
+		"PALBotRN" 380
 		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_MESH|PALBot:PALbot_HeadGRP|PALBot:GLASS_clean|PALBot:GLASS_cleanShape" 
 		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary|PALBot:PALbot_L_footSec_reshape01_offset|PALBot:PALbot_L_footSec_reshape01" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary|PALBot:PALbot_L_footSec_reshape01_offset|PALBot:PALbot_L_footSec_reshape01" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary|PALBot:PALbot_L_footSec_reshape01_offset|PALBot:PALbot_L_footSec_reshape01" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary|PALBot:PALbot_L_footSec_reshape01_offset|PALBot:PALbot_L_footSec_reshape01" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary|PALBot:PALbot_L_footSec_reshape01_offset|PALBot:PALbot_L_footSec_reshape01" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary|PALBot:PALbot_L_footSec_reshape01_offset|PALBot:PALbot_L_footSec_reshape01" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary|PALBot:PALbot_L_footSec_reshape01_offset|PALBot:PALbot_L_footSec_reshape01" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary|PALBot:PALbot_L_footSec_reshape01_offset|PALBot:PALbot_L_footSec_reshape01" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary|PALBot:PALbot_L_footSec_reshape02_offset|PALBot:PALbot_L_footSec_reshape02" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary|PALBot:PALbot_L_footSec_reshape02_offset|PALBot:PALbot_L_footSec_reshape02" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary|PALBot:PALbot_L_footSec_reshape02_offset|PALBot:PALbot_L_footSec_reshape02" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary|PALBot:PALbot_L_footSec_reshape02_offset|PALBot:PALbot_L_footSec_reshape02" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary|PALBot:PALbot_L_footSec_reshape02_offset|PALBot:PALbot_L_footSec_reshape02" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary|PALBot:PALbot_L_footSec_reshape02_offset|PALBot:PALbot_L_footSec_reshape02" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary|PALBot:PALbot_L_footSec_reshape02_offset|PALBot:PALbot_L_footSec_reshape02" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_foot_secondary_offset|PALBot:PALbot_L_foot_secondary|PALBot:PALbot_L_footSec_reshape02_offset|PALBot:PALbot_L_footSec_reshape02" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_Engine_ctrl_offset|PALBot:PALbot_L_Engine_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_Engine_ctrl_offset|PALBot:PALbot_L_Engine_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_Engine_ctrl_offset|PALBot:PALbot_L_Engine_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_Engine_ctrl_offset|PALBot:PALbot_L_Engine_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_Engine_ctrl_offset|PALBot:PALbot_L_Engine_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_Engine_ctrl_offset|PALBot:PALbot_L_Engine_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_Engine_ctrl_offset|PALBot:PALbot_L_Engine_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_Engine_ctrl_offset|PALBot:PALbot_L_Engine_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip|PALBot:PALbot_L_IK_foot_tip_offset|PALBot:PALbot_L_IK_foot_tip" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip|PALBot:PALbot_L_IK_foot_tip_offset|PALBot:PALbot_L_IK_foot_tip" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip|PALBot:PALbot_L_IK_foot_tip_offset|PALBot:PALbot_L_IK_foot_tip" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip|PALBot:PALbot_L_IK_foot_tip_offset|PALBot:PALbot_L_IK_foot_tip" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip|PALBot:PALbot_L_IK_foot_tip_offset|PALBot:PALbot_L_IK_foot_tip" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip|PALBot:PALbot_L_IK_foot_tip_offset|PALBot:PALbot_L_IK_foot_tip" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip|PALBot:PALbot_L_IK_foot_tip_offset|PALBot:PALbot_L_IK_foot_tip" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip|PALBot:PALbot_L_IK_foot_tip_offset|PALBot:PALbot_L_IK_foot_tip" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip|PALBot:PALbot_L_IK_foot_tip_offset|PALBot:PALbot_L_IK_foot_tip|PALBot:PALbot_L_IK_footBall_offset|PALBot:PALbot_L_IK_footBall_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip|PALBot:PALbot_L_IK_foot_tip_offset|PALBot:PALbot_L_IK_foot_tip|PALBot:PALbot_L_IK_footBall_offset|PALBot:PALbot_L_IK_footBall_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip|PALBot:PALbot_L_IK_foot_tip_offset|PALBot:PALbot_L_IK_foot_tip|PALBot:PALbot_L_IK_footBall_offset|PALBot:PALbot_L_IK_footBall_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip|PALBot:PALbot_L_IK_foot_tip_offset|PALBot:PALbot_L_IK_foot_tip|PALBot:PALbot_L_IK_footBall_offset|PALBot:PALbot_L_IK_footBall_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip|PALBot:PALbot_L_IK_foot_tip_offset|PALBot:PALbot_L_IK_foot_tip|PALBot:PALbot_L_IK_footBall_offset|PALBot:PALbot_L_IK_footBall_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip|PALBot:PALbot_L_IK_foot_tip_offset|PALBot:PALbot_L_IK_foot_tip|PALBot:PALbot_L_IK_footBall_offset|PALBot:PALbot_L_IK_footBall_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip|PALBot:PALbot_L_IK_foot_tip_offset|PALBot:PALbot_L_IK_foot_tip|PALBot:PALbot_L_IK_footBall_offset|PALBot:PALbot_L_IK_footBall_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset|PALBot:PALbot_L_IK_Foot_ctrl|PALBot:PALbot_L_IK_heel_lift_offset|PALBot:PALbot_L_IK_heel_lift_tip|PALBot:PALbot_L_IK_foot_tip_offset|PALBot:PALbot_L_IK_foot_tip|PALBot:PALbot_L_IK_footBall_offset|PALBot:PALbot_L_IK_footBall_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_Neck_ctrl_offset|PALBot:PALbot_Neck_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_Neck_ctrl_offset|PALBot:PALbot_Neck_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_Neck_ctrl_offset|PALBot:PALbot_Neck_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_Neck_ctrl_offset|PALBot:PALbot_Neck_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_Neck_ctrl_offset|PALBot:PALbot_Neck_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_Neck_ctrl_offset|PALBot:PALbot_Neck_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_Neck_ctrl_offset|PALBot:PALbot_Neck_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_Neck_ctrl_offset|PALBot:PALbot_Neck_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_Neck_ctrl_offset|PALBot:PALbot_Neck_ctrl|PALBot:PALbot_head_ctrl_offset|PALBot:PALbot_head_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_Neck_ctrl_offset|PALBot:PALbot_Neck_ctrl|PALBot:PALbot_head_ctrl_offset|PALBot:PALbot_head_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_Neck_ctrl_offset|PALBot:PALbot_Neck_ctrl|PALBot:PALbot_head_ctrl_offset|PALBot:PALbot_head_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_Neck_ctrl_offset|PALBot:PALbot_Neck_ctrl|PALBot:PALbot_head_ctrl_offset|PALBot:PALbot_head_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_Neck_ctrl_offset|PALBot:PALbot_Neck_ctrl|PALBot:PALbot_head_ctrl_offset|PALBot:PALbot_head_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl" 
-		"rotateZ" " -av 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl" 
-		"rotateY" " -av 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl" 
-		"rotateZ" " -av 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl" 
-		"rotateX" " -av 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_R_Clavicle_offset|PALBot:PALbot_R_Clavicle_ctrl|PALBot:PALbot_R_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_R_FK_Elbow_offset|PALBot:PALbot_R_FK_Elbow_ctrl|PALBot:PALbot_R_FK_Wrist_ctrl_offset|PALBot:PALbot_R_FK_Wrist_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl" 
-		"rotateZ" " -av 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl" 
-		"rotateY" " -av 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl" 
-		"rotateZ" " -av 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl" 
-		"rotateX" " -av 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl|PALBot:PALbot_L_FK_Wrist_ctrl_offset|PALBot:PALbot_L_FK_Wrist_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl|PALBot:PALbot_L_FK_Wrist_ctrl_offset|PALBot:PALbot_L_FK_Wrist_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl|PALBot:PALbot_L_FK_Wrist_ctrl_offset|PALBot:PALbot_L_FK_Wrist_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl|PALBot:PALbot_L_FK_Wrist_ctrl_offset|PALBot:PALbot_L_FK_Wrist_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl|PALBot:PALbot_L_FK_Wrist_ctrl_offset|PALBot:PALbot_L_FK_Wrist_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl|PALBot:PALbot_L_FK_Wrist_ctrl_offset|PALBot:PALbot_L_FK_Wrist_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl|PALBot:PALbot_L_FK_Wrist_ctrl_offset|PALBot:PALbot_L_FK_Wrist_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_chestup_ctrl_offset|PALBot:PALbot_chestUp_ctrl|PALBot:PALbot_chestUp_secondary_ctrl_offset|PALBot:PALbot_chestUp_secondary_ctrl|PALBot:PALbot_L_Clavicle_offset|PALBot:PALbot_L_Clavicle_ctrl|PALBot:PALbot_L_Arm_FOLLOW|PALBot:PALbot_L_ShoulderRotate_offset|PALBot:PALbot_L_ShoulderRotate_ctrl|PALBot:PALbot_L_Arm_offset|PALBot:PALbot_L_Arm_ctrl|PALBot:PALbot_L_FK_Elbow_offset|PALBot:PALbot_L_FK_Elbow_ctrl|PALBot:PALbot_L_FK_Wrist_ctrl_offset|PALBot:PALbot_L_FK_Wrist_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl|PALBot:PALbot_cog_secondary_ctrl_offset1|PALBot:PALbot_cog_secondary_ctrl|PALBot:PALbot_hipMain_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl|PALBot:PALbot_L_Thumb03_offset|PALBot:PALbot_L_Thumb03_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl|PALBot:PALbot_L_Thumb03_offset|PALBot:PALbot_L_Thumb03_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl|PALBot:PALbot_L_Thumb03_offset|PALBot:PALbot_L_Thumb03_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl|PALBot:PALbot_L_Thumb03_offset|PALBot:PALbot_L_Thumb03_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl|PALBot:PALbot_L_Thumb03_offset|PALBot:PALbot_L_Thumb03_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl|PALBot:PALbot_L_Thumb03_offset|PALBot:PALbot_L_Thumb03_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl|PALBot:PALbot_L_Thumb03_offset|PALBot:PALbot_L_Thumb03_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Thumb01_offset|PALBot:PALbot_L_Thumb01_ctrl|PALBot:PALbot_L_Thumb02_offset|PALBot:PALbot_L_Thumb02_ctrl|PALBot:PALbot_L_Thumb03_offset|PALBot:PALbot_L_Thumb03_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl|PALBot:PALbot_L_Index02_offset|PALBot:PALbot_L_Index02_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl|PALBot:PALbot_L_Index02_offset|PALBot:PALbot_L_Index02_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl|PALBot:PALbot_L_Index02_offset|PALBot:PALbot_L_Index02_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl|PALBot:PALbot_L_Index02_offset|PALBot:PALbot_L_Index02_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl|PALBot:PALbot_L_Index02_offset|PALBot:PALbot_L_Index02_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl|PALBot:PALbot_L_Index02_offset|PALBot:PALbot_L_Index02_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl|PALBot:PALbot_L_Index02_offset|PALBot:PALbot_L_Index02_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Index01_offset|PALBot:PALbot_L_Index01_ctrl|PALBot:PALbot_L_Index02_offset|PALBot:PALbot_L_Index02_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl|PALBot:PALbot_L_Middle02_offset|PALBot:PALbot_L_Middle02_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl|PALBot:PALbot_L_Middle02_offset|PALBot:PALbot_L_Middle02_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl|PALBot:PALbot_L_Middle02_offset|PALBot:PALbot_L_Middle02_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl|PALBot:PALbot_L_Middle02_offset|PALBot:PALbot_L_Middle02_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl|PALBot:PALbot_L_Middle02_offset|PALBot:PALbot_L_Middle02_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl|PALBot:PALbot_L_Middle02_offset|PALBot:PALbot_L_Middle02_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl|PALBot:PALbot_L_Middle02_offset|PALBot:PALbot_L_Middle02_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Middle01_offset|PALBot:PALbot_L_Middle01_ctrl|PALBot:PALbot_L_Middle02_offset|PALBot:PALbot_L_Middle02_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl|PALBot:PALbot_L_Ring02_offset|PALBot:PALbot_L_Ring02_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl|PALBot:PALbot_L_Ring02_offset|PALBot:PALbot_L_Ring02_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl|PALBot:PALbot_L_Ring02_offset|PALBot:PALbot_L_Ring02_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl|PALBot:PALbot_L_Ring02_offset|PALBot:PALbot_L_Ring02_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl|PALBot:PALbot_L_Ring02_offset|PALBot:PALbot_L_Ring02_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl|PALBot:PALbot_L_Ring02_offset|PALBot:PALbot_L_Ring02_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl|PALBot:PALbot_L_Ring02_offset|PALBot:PALbot_L_Ring02_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Ring01_offset|PALBot:PALbot_L_Ring01_ctrl|PALBot:PALbot_L_Ring02_offset|PALBot:PALbot_L_Ring02_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl|PALBot:PALbot_L_Pinky02_offset|PALBot:PALbot_L_Pinky02_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl|PALBot:PALbot_L_Pinky02_offset|PALBot:PALbot_L_Pinky02_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl|PALBot:PALbot_L_Pinky02_offset|PALBot:PALbot_L_Pinky02_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl|PALBot:PALbot_L_Pinky02_offset|PALBot:PALbot_L_Pinky02_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl|PALBot:PALbot_L_Pinky02_offset|PALBot:PALbot_L_Pinky02_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl|PALBot:PALbot_L_Pinky02_offset|PALBot:PALbot_L_Pinky02_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl|PALBot:PALbot_L_Pinky02_offset|PALBot:PALbot_L_Pinky02_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_L_fingers_grp|PALBot:PALbot_L_Pinky01_offset|PALBot:PALbot_L_Pinky01_ctrl|PALBot:PALbot_L_Pinky02_offset|PALBot:PALbot_L_Pinky02_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl|PALBot:PALbot_R_Thumb03_offset|PALBot:PALbot_R_Thumb03_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl|PALBot:PALbot_R_Thumb03_offset|PALBot:PALbot_R_Thumb03_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl|PALBot:PALbot_R_Thumb03_offset|PALBot:PALbot_R_Thumb03_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl|PALBot:PALbot_R_Thumb03_offset|PALBot:PALbot_R_Thumb03_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl|PALBot:PALbot_R_Thumb03_offset|PALBot:PALbot_R_Thumb03_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl|PALBot:PALbot_R_Thumb03_offset|PALBot:PALbot_R_Thumb03_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl|PALBot:PALbot_R_Thumb03_offset|PALBot:PALbot_R_Thumb03_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Thumb01_offset|PALBot:PALbot_R_Thumb01_ctrl|PALBot:PALbot_R_Thumb02_offset|PALBot:PALbot_R_Thumb02_ctrl|PALBot:PALbot_R_Thumb03_offset|PALBot:PALbot_R_Thumb03_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl|PALBot:PALbot_R_Index02_offset|PALBot:PALbot_R_Index02_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl|PALBot:PALbot_R_Index02_offset|PALBot:PALbot_R_Index02_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl|PALBot:PALbot_R_Index02_offset|PALBot:PALbot_R_Index02_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl|PALBot:PALbot_R_Index02_offset|PALBot:PALbot_R_Index02_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl|PALBot:PALbot_R_Index02_offset|PALBot:PALbot_R_Index02_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl|PALBot:PALbot_R_Index02_offset|PALBot:PALbot_R_Index02_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl|PALBot:PALbot_R_Index02_offset|PALBot:PALbot_R_Index02_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Index01_offset|PALBot:PALbot_R_Index01_ctrl|PALBot:PALbot_R_Index02_offset|PALBot:PALbot_R_Index02_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl|PALBot:PALbot_R_Middle02_offset|PALBot:PALbot_R_Middle02_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl|PALBot:PALbot_R_Middle02_offset|PALBot:PALbot_R_Middle02_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl|PALBot:PALbot_R_Middle02_offset|PALBot:PALbot_R_Middle02_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl|PALBot:PALbot_R_Middle02_offset|PALBot:PALbot_R_Middle02_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl|PALBot:PALbot_R_Middle02_offset|PALBot:PALbot_R_Middle02_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl|PALBot:PALbot_R_Middle02_offset|PALBot:PALbot_R_Middle02_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl|PALBot:PALbot_R_Middle02_offset|PALBot:PALbot_R_Middle02_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Middle01_offset|PALBot:PALbot_R_Middle01_ctrl|PALBot:PALbot_R_Middle02_offset|PALBot:PALbot_R_Middle02_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl|PALBot:PALbot_R_Ring02_offset|PALBot:PALbot_R_Ring02_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl|PALBot:PALbot_R_Ring02_offset|PALBot:PALbot_R_Ring02_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl|PALBot:PALbot_R_Ring02_offset|PALBot:PALbot_R_Ring02_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl|PALBot:PALbot_R_Ring02_offset|PALBot:PALbot_R_Ring02_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl|PALBot:PALbot_R_Ring02_offset|PALBot:PALbot_R_Ring02_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl|PALBot:PALbot_R_Ring02_offset|PALBot:PALbot_R_Ring02_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl|PALBot:PALbot_R_Ring02_offset|PALBot:PALbot_R_Ring02_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Ring01_offset|PALBot:PALbot_R_Ring01_ctrl|PALBot:PALbot_R_Ring02_offset|PALBot:PALbot_R_Ring02_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl|PALBot:PALbot_R_Pinky02_offset|PALBot:PALbot_R_Pinky02_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl|PALBot:PALbot_R_Pinky02_offset|PALBot:PALbot_R_Pinky02_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl|PALBot:PALbot_R_Pinky02_offset|PALBot:PALbot_R_Pinky02_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl|PALBot:PALbot_R_Pinky02_offset|PALBot:PALbot_R_Pinky02_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl|PALBot:PALbot_R_Pinky02_offset|PALBot:PALbot_R_Pinky02_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl|PALBot:PALbot_R_Pinky02_offset|PALBot:PALbot_R_Pinky02_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl|PALBot:PALbot_R_Pinky02_offset|PALBot:PALbot_R_Pinky02_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_R_fingers_grp|PALBot:PALbot_R_Pinky01_offset|PALBot:PALbot_R_Pinky01_ctrl|PALBot:PALbot_R_Pinky02_offset|PALBot:PALbot_R_Pinky02_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape01_offset|PALBot:PALbot_R_footSec_reshape01" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape01_offset|PALBot:PALbot_R_footSec_reshape01" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape01_offset|PALBot:PALbot_R_footSec_reshape01" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape01_offset|PALBot:PALbot_R_footSec_reshape01" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape01_offset|PALBot:PALbot_R_footSec_reshape01" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape01_offset|PALBot:PALbot_R_footSec_reshape01" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape01_offset|PALBot:PALbot_R_footSec_reshape01" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape01_offset|PALBot:PALbot_R_footSec_reshape01" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape02_offset|PALBot:PALbot_R_footSec_reshape02" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape02_offset|PALBot:PALbot_R_footSec_reshape02" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape02_offset|PALBot:PALbot_R_footSec_reshape02" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape02_offset|PALBot:PALbot_R_footSec_reshape02" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape02_offset|PALBot:PALbot_R_footSec_reshape02" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape02_offset|PALBot:PALbot_R_footSec_reshape02" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape02_offset|PALBot:PALbot_R_footSec_reshape02" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_foot_secondary_offset|PALBot:PALbot_R_foot_secondary|PALBot:PALbot_R_footSec_reshape02_offset|PALBot:PALbot_R_footSec_reshape02" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_Engine_ctrl_offset1|PALBot:PALbot_R_Engine_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_Engine_ctrl_offset1|PALBot:PALbot_R_Engine_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_Engine_ctrl_offset1|PALBot:PALbot_R_Engine_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_Engine_ctrl_offset1|PALBot:PALbot_R_Engine_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_Engine_ctrl_offset1|PALBot:PALbot_R_Engine_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_Engine_ctrl_offset1|PALBot:PALbot_R_Engine_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_Engine_ctrl_offset1|PALBot:PALbot_R_Engine_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_Engine_ctrl_offset1|PALBot:PALbot_R_Engine_ctrl" 
-		"rotateZ" " -av"
 		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
+		"Heel_Peel" " -k 1"
 		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl" 
-		"Heel_Peel" " -av -k 1 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl" 
-		"follow_hip" " -av -k 1 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip" 
-		"rotateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip|PALBot:PALbot_R_IK_footBall_offset|PALBot:PALbot_R_IK_footBall_ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip|PALBot:PALbot_R_IK_footBall_offset|PALBot:PALbot_R_IK_footBall_ctrl" 
-		"translateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip|PALBot:PALbot_R_IK_footBall_offset|PALBot:PALbot_R_IK_footBall_ctrl" 
-		"translateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip|PALBot:PALbot_R_IK_footBall_offset|PALBot:PALbot_R_IK_footBall_ctrl" 
-		"translateZ" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip|PALBot:PALbot_R_IK_footBall_offset|PALBot:PALbot_R_IK_footBall_ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip|PALBot:PALbot_R_IK_footBall_offset|PALBot:PALbot_R_IK_footBall_ctrl" 
-		"rotateX" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip|PALBot:PALbot_R_IK_footBall_offset|PALBot:PALbot_R_IK_footBall_ctrl" 
-		"rotateY" " -av"
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset|PALBot:PALbot_R_IK_Foot_ctrl|PALBot:PALbot_R_IK_heel_lift_offset|PALBot:PALbot_R_IK_heel_lift_tip|PALBot:PALbot_R_IK_foot_tip_offset|PALBot:PALbot_R_IK_foot_tip|PALBot:PALbot_R_IK_footBall_offset|PALBot:PALbot_R_IK_footBall_ctrl" 
-		"rotateZ" " -av"
+		"follow_hip" " -k 1"
 		2 "PALBot:FACE_SHD1" "color" " -type \"float3\" 0 0 0"
 		2 "PALBot:FACE_SHD1" "ambientColor" " -type \"float3\" 1 1 1"
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC.drawOverride" "PALBotRN.placeHolderList[1]" 
@@ -2172,99 +1330,111 @@ createNode animCurveTL -n "PALbot_cog_ctrl_translateX";
 	rename -uid "FAB0AFD5-4F00-7127-B7FB-43991C687C4F";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr -s 24 ".ktv[0:23]"  0 -0.255 3 -0.4 6 -0.26992680000000002 9 0
+	setAttr -s 28 ".ktv[0:27]"  0 -0.255 3 -0.4 6 -0.26992680000000002 9 0
 		 12 0.255 15 0.4 18 0.26992680000000002 21 0 24 -0.255 100 -0.5213634212666296 102 -0.685
 		 104 -0.272 106 0 108 0.521 110 0.685 112 0.272 114 0 116 -0.5213634212666296 200 0
-		 206 0 212 0 218 0 224 0 300 0;
-	setAttr -s 24 ".kit[18:23]"  10 10 10 10 10 10;
-	setAttr -s 24 ".kot[8:23]"  5 9 9 9 9 9 9 9 
-		9 5 5 5 5 5 5 10;
+		 206 0 212 0 218 0 224 0 300 0 312 0 316 0 324 0 332 0;
+	setAttr -s 28 ".kit[18:27]"  10 10 10 10 10 10 10 10 
+		10 10;
+	setAttr -s 28 ".kot[8:27]"  5 9 9 9 9 9 9 9 
+		9 5 5 5 5 5 5 10 10 10 10 10;
 createNode animCurveTL -n "PALbot_cog_ctrl_translateY";
 	rename -uid "A5C6F419-4321-6809-C670-6C95440A2349";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr -s 24 ".ktv[0:23]"  0 -0.60653143025588097 3 -1.445830301426712
+	setAttr -s 28 ".ktv[0:27]"  0 -0.60653143025588097 3 -1.445830301426712
 		 6 -0.99299437888935316 9 -0.040174778106043862 12 -0.60653143025588097 15 -1.445830301426712
 		 18 -0.99299437888935316 21 -0.040174778106043862 24 -0.60653143025588097 100 0.19284907448368571
 		 102 -0.85692346021915533 104 -0.29034817387525536 106 0.43782438076832975 108 0.19284907448368571
 		 110 -0.857 112 -0.29034817387525536 114 0.43782438076832975 116 0.19284907448368571
 		 200 -2.0476602501732675 206 -1.1053665728798601 212 -0.16307289558645266 218 -1.1053665728798601
-		 224 -2.0476602501732675 300 0;
-	setAttr -s 24 ".kit[18:23]"  1 1 9 1 1 10;
-	setAttr -s 24 ".kot[8:23]"  5 9 9 9 9 9 9 9 
-		9 5 1 1 9 1 5 10;
-	setAttr -s 24 ".kix[18:23]"  0.99957175851827151 0.086924870393289583 
-		1 0.13116866346258835 0.99957175851827151 0.839734529809679;
-	setAttr -s 24 ".kiy[18:23]"  -0.02926259682069015 0.99621486984842267 
-		0 -0.99136006663847343 -0.02926259682069015 0.54299716338606907;
-	setAttr -s 24 ".kox[18:23]"  0.9995717575881603 0.086924948770520566 
-		1 0.13116875246681428 0 0.839734529809679;
-	setAttr -s 24 ".koy[18:23]"  -0.029262628592049204 0.99621486300960316 
-		0 -0.99136005486215739 0 0.54299716338606907;
+		 224 -2.0476602501732675 300 -0.26139221514426758 312 -3.7801780919222132 316 1.1545823362822834
+		 324 1.1545823362822834 332 1.1545823362822834;
+	setAttr -s 28 ".kit[18:27]"  1 1 9 1 1 10 10 10 
+		10 10;
+	setAttr -s 28 ".kot[8:27]"  5 9 9 9 9 9 9 9 
+		9 5 1 1 9 1 5 10 10 10 10 10;
+	setAttr -s 28 ".kix[18:27]"  0.99957175851827151 0.086924870393289583 
+		1 0.13116866346258835 0.99957175851827151 0.90414994878286947 0.42596740549725104 
+		1 1 1;
+	setAttr -s 28 ".kiy[18:27]"  -0.02926259682069015 0.99621486984842267 
+		0 -0.99136006663847343 -0.02926259682069015 -0.42721525033165014 0.9047385088819534 
+		0 0 0;
+	setAttr -s 28 ".kox[18:27]"  0.9995717575881603 0.086924948770520566 
+		1 0.13116875246681428 0 0.90414994878286947 0.42596740549725104 1 1 1;
+	setAttr -s 28 ".koy[18:27]"  -0.029262628592049204 0.99621486300960316 
+		0 -0.99136005486215739 0 -0.42721525033165014 0.9047385088819534 0 0 0;
 createNode animCurveTL -n "PALbot_cog_ctrl_translateZ";
 	rename -uid "A6622CC7-43D7-3D29-3075-8BB241400CA8";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr -s 24 ".ktv[0:23]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
+	setAttr -s 28 ".ktv[0:27]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
 		 100 0.42118371892707795 102 0 104 0 106 0.63888231461338307 108 0.42118371892707795
 		 110 0 112 0 114 0.63888231461338307 116 0.42118371892707795 200 0 206 0 212 0 218 0
-		 224 0 300 0;
-	setAttr -s 24 ".kit[18:23]"  10 10 10 10 10 10;
-	setAttr -s 24 ".kot[8:23]"  5 9 9 9 9 9 9 9 
-		9 5 5 5 5 5 5 10;
+		 224 0 300 0 312 -1.0943008863937811 316 1.8413644637383322 324 1.4104572439727154
+		 332 0.47748077621520268;
+	setAttr -s 28 ".kit[18:27]"  10 10 10 10 10 10 10 10 
+		10 10;
+	setAttr -s 28 ".kot[8:27]"  5 9 9 9 9 9 9 9 
+		9 5 5 5 5 5 5 10 10 10 10 10;
 createNode animCurveTA -n "PALbot_cog_ctrl_rotateX";
 	rename -uid "245695EB-4BB5-82D7-2FC7-4DB0DBDA3F10";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr -s 24 ".ktv[0:23]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
+	setAttr -s 28 ".ktv[0:27]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
 		 100 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 0 206 0 212 0 218 0 224 0
-		 300 0;
-	setAttr -s 24 ".kit[18:23]"  10 10 10 10 10 10;
-	setAttr -s 24 ".kot[8:23]"  5 9 9 9 9 9 9 9 
-		9 5 5 5 5 5 5 10;
+		 300 0 312 19.214568777472671 316 8.4859117995759092 324 0.42987604113236189 332 -5.9611447426932411;
+	setAttr -s 28 ".kit[18:27]"  10 10 10 10 10 10 10 10 
+		10 10;
+	setAttr -s 28 ".kot[8:27]"  5 9 9 9 9 9 9 9 
+		9 5 5 5 5 5 5 10 10 10 10 10;
 createNode animCurveTA -n "PALbot_cog_ctrl_rotateY";
 	rename -uid "94D7331F-4908-BECF-C477-9CA3A8B62090";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr -s 24 ".ktv[0:23]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
+	setAttr -s 28 ".ktv[0:27]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
 		 100 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 -8.9758889592910638 206 -8.9758889592910638
-		 212 -8.9758889592910638 218 -8.9758889592910638 224 -8.9758889592910638 300 0;
-	setAttr -s 24 ".kit[18:23]"  10 10 10 10 10 10;
-	setAttr -s 24 ".kot[8:23]"  5 9 9 9 9 9 9 9 
-		9 5 5 5 5 5 5 10;
+		 212 -8.9758889592910638 218 -8.9758889592910638 224 -8.9758889592910638 300 0 312 0
+		 316 0 324 0 332 0;
+	setAttr -s 28 ".kit[18:27]"  10 10 10 10 10 10 10 10 
+		10 10;
+	setAttr -s 28 ".kot[8:27]"  5 9 9 9 9 9 9 9 
+		9 5 5 5 5 5 5 10 10 10 10 10;
 createNode animCurveTA -n "PALbot_cog_ctrl_rotateZ";
 	rename -uid "D8165624-4479-0C89-E6C7-B5836E3976F7";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr -s 24 ".ktv[0:23]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
+	setAttr -s 28 ".ktv[0:27]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
 		 100 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 0 206 0 212 0 218 0 224 0
-		 300 0;
-	setAttr -s 24 ".kit[18:23]"  10 10 10 10 10 10;
-	setAttr -s 24 ".kot[8:23]"  5 9 9 9 9 9 9 9 
-		9 5 5 5 5 5 5 10;
+		 300 0 312 0 316 0 324 0 332 0;
+	setAttr -s 28 ".kit[18:27]"  10 10 10 10 10 10 10 10 
+		10 10;
+	setAttr -s 28 ".kot[8:27]"  5 9 9 9 9 9 9 9 
+		9 5 5 5 5 5 5 10 10 10 10 10;
 createNode animCurveTU -n "PALbot_cog_ctrl_secondary_vis";
 	rename -uid "CC298AE2-4645-78C4-6A0E-2B88DEE116C1";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr -s 24 ".ktv[0:23]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
+	setAttr -s 28 ".ktv[0:27]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
 		 100 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 0 206 0 212 0 218 0 224 0
-		 300 0;
-	setAttr -s 24 ".kit[18:23]"  10 10 10 10 10 10;
-	setAttr -s 24 ".kot[8:23]"  5 9 9 9 9 9 9 9 
-		9 5 5 5 5 5 5 10;
+		 300 0 312 0 316 0 324 0 332 0;
+	setAttr -s 28 ".kit[18:27]"  10 10 10 10 10 10 10 10 
+		10 10;
+	setAttr -s 28 ".kot[8:27]"  5 9 9 9 9 9 9 9 
+		9 5 5 5 5 5 5 10 10 10 10 10;
 createNode animCurveTL -n "PALbot_R_IK_Foot_ctrl_translateX";
 	rename -uid "B29B4BAD-4D8D-2BC5-9484-3783B61CF857";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
 	setAttr -s 21 ".ktv[0:20]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
 		 100 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 -0.88005018283323522 224 -0.88005018283323522
-		 300 0;
+		 300 -1;
 	setAttr -s 21 ".kit[9:20]"  9 9 9 9 9 9 9 9 
 		9 10 1 10;
 	setAttr -s 21 ".kot[8:20]"  5 9 9 9 9 9 9 9 
 		9 5 5 5 10;
-	setAttr -s 21 ".kix[19:20]"  0.9698123470228972 0.96348490484097771;
-	setAttr -s 21 ".kiy[19:20]"  -0.24385243808897983 0.26776265263022048;
+	setAttr -s 21 ".kix[19:20]"  0.9698123470228972 0.99928336594343015;
+	setAttr -s 21 ".kiy[19:20]"  -0.24385243808897983 -0.037851744329274878;
 createNode animCurveTL -n "PALbot_R_IK_Foot_ctrl_translateY";
 	rename -uid "D63B3EA6-426E-63BF-2FC8-E5B240911255";
 	setAttr ".tan" 10;
@@ -2321,13 +1491,13 @@ createNode animCurveTA -n "PALbot_R_IK_Foot_ctrl_rotateY";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
 	setAttr -s 21 ".ktv[0:20]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
-		 100 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 -20 224 -20 300 0;
+		 100 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 -20 224 -20 300 -13;
 	setAttr -s 21 ".kit[9:20]"  9 9 9 9 9 9 9 9 
 		9 10 1 10;
 	setAttr -s 21 ".kot[8:20]"  5 9 9 9 9 9 9 9 
 		9 5 5 5 10;
-	setAttr -s 21 ".kix[19:20]"  0.99506345074483904 0.9939793402185696;
-	setAttr -s 21 ".kiy[19:20]"  -0.099240762752879186 0.10956765589651538;
+	setAttr -s 21 ".kix[19:20]"  0.99506345074483904 0.99925658449207477;
+	setAttr -s 21 ".kiy[19:20]"  -0.099240762752879186 0.038552280726738095;
 createNode animCurveTA -n "PALbot_R_IK_Foot_ctrl_rotateZ";
 	rename -uid "92A0B05D-4A70-BB72-7048-338539195A19";
 	setAttr ".tan" 10;
@@ -2368,193 +1538,212 @@ createNode animCurveTA -n "PALbot_R_IK_foot_tip_rotateX";
 	rename -uid "F83DB911-45E6-FFED-41C0-FFBAB7B900CA";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr -s 24 ".ktv[0:23]"  0 0 6 0 9 41.511530256403908 12 41.511530256403908
+	setAttr -s 28 ".ktv[0:27]"  0 0 6 0 9 41.511530256403908 12 41.511530256403908
 		 15 52.231140530351446 18 104.91463471114237 21 61.752656487810569 24 0 100 48.09877470333911
 		 101 32.785088906105202 102 14.054252549570299 104 21.482301128913182 106 53.279065249487935
 		 108 79.052163001768307 108.00000017006802 48.09877470333911 109 79.052163001768307
 		 109.00000017006802 48.09877470333911 110 84.845925555873677 112 96.664332092122194
-		 114 68.054625235752425 116 48.09877470333911 200 0 224 0 300 0;
-	setAttr -s 24 ".kit[0:23]"  10 10 10 10 10 1 1 10 
-		9 10 9 9 9 9 9 9 9 9 9 9 9 10 1 10;
-	setAttr -s 24 ".kot[0:23]"  10 10 10 10 10 1 1 5 
-		9 5 9 9 9 9 9 9 9 9 9 9 5 5 5 10;
-	setAttr -s 24 ".kix[5:23]"  0.99988546889430174 0.19615796732169322 
+		 114 68.054625235752425 116 48.09877470333911 200 0 224 0 300 0 312 0 313 5.469530697121165
+		 314 16.40859209136401 316 43.756245576969867;
+	setAttr -s 28 ".kit[0:27]"  10 10 10 10 10 1 1 10 
+		9 10 9 9 9 9 9 9 9 9 9 9 9 10 1 10 10 
+		10 10 10;
+	setAttr -s 28 ".kot[0:27]"  10 10 10 10 10 1 1 5 
+		9 5 9 9 9 9 9 9 9 9 9 9 5 5 5 10 10 
+		10 10 10;
+	setAttr -s 28 ".kix[5:27]"  0.99988546889430174 0.19615796732169322 
 		0.99738962910559537 0.98446519708242386 0.13888792116320328 0.53524089714463419 0.23654161445649088 
 		0.16363731263871839 0.67773132391030877 1 1 0.3809759172308072 0.14589233005319313 
 		0.49435316866037027 0.19293270418242303 0.94921179853258608 1 0.97241995260727709 
-		1;
-	setAttr -s 24 ".kiy[5:23]"  0.015134367975650107 -0.98057230832622511 
+		1 1 0.27939642222541439 0.18387218607970213 0.17198917965837993;
+	setAttr -s 28 ".kiy[5:27]"  0.015134367975650107 -0.98057230832622511 
 		-0.072207532519835069 0.1755798272395335 -0.99030810627549837 -0.84469946254499717 
 		0.97162135867338617 0.98652056740464267 -0.73530963042162045 0 0 0.92458496120699751 
 		0.98930047408845911 -0.86926114869781879 -0.98121199119092395 -0.31463782596269824 
-		0 -0.23323686623529513 0;
-	setAttr -s 24 ".kox[5:23]"  0.99988546512279886 0.033596580283720714 
+		0 -0.23323686623529513 0 0 0.96017583767122472 0.98295016108970223 0.98509883873672166;
+	setAttr -s 28 ".kox[5:27]"  0.99988546512279886 0.033596580283720714 
 		0 0.98446519708242386 0 0.53524089714463419 0.23654161445649088 0.16363731263871839 
 		0.67773132391030877 1 1 0.3809759172308072 0.14589233005319313 0.49435316866037027 
-		0.19293270418242303 0 0 0 1;
-	setAttr -s 24 ".koy[5:23]"  0.015134617146277528 -0.99943547555269396 
+		0.19293270418242303 0 0 0 1 1 0.27939642222541439 0.18387218607970213 0.17198917965837993;
+	setAttr -s 28 ".koy[5:27]"  0.015134617146277528 -0.99943547555269396 
 		0 0.1755798272395335 0 -0.84469946254499717 0.97162135867338617 0.98652056740464267 
 		-0.73530963042162045 0 0 0.92458496120699751 0.98930047408845911 -0.86926114869781879 
-		-0.98121199119092395 0 0 0 0;
+		-0.98121199119092395 0 0 0 0 0 0.96017583767122472 0.98295016108970223 0.98509883873672166;
 createNode animCurveTA -n "PALbot_R_IK_foot_tip_rotateY";
 	rename -uid "2EE01F8D-4DF4-6DFE-D69A-52AFD18A5D17";
-	setAttr ".tan" 9;
+	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 24 ".ktv[0:23]"  0 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0 100 0
+	setAttr -s 28 ".ktv[0:27]"  0 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0 100 0
 		 101 0 102 0 104 0 106 0 108 0 108.00000017006802 0.150135976109701 109 0 109.00000017006802 0.150135976109701
-		 110 0 112 0 114 0 116 0 200 0 224 0 300 0;
-	setAttr -s 24 ".kit[0:23]"  10 10 10 10 10 10 10 10 
-		9 10 9 9 9 9 9 9 9 9 9 9 9 10 1 10;
-	setAttr -s 24 ".kot[0:23]"  10 10 10 10 10 10 10 5 
-		9 5 9 9 9 9 9 9 9 9 9 9 5 5 5 10;
-	setAttr -s 24 ".kix[22:23]"  1 1;
-	setAttr -s 24 ".kiy[22:23]"  0 0;
+		 110 0 112 0 114 0 116 0 200 0 224 0 300 0 312 0 313 0 314 0 316 0;
+	setAttr -s 28 ".kit[8:27]"  9 10 9 9 9 9 9 9 
+		9 9 9 9 9 10 1 10 10 10 10 10;
+	setAttr -s 28 ".kot[7:27]"  5 9 5 9 9 9 9 9 
+		9 9 9 9 9 5 5 5 10 10 10 10 10;
+	setAttr -s 28 ".kix[22:27]"  1 1 1 1 1 1;
+	setAttr -s 28 ".kiy[22:27]"  0 0 0 0 0 0;
 createNode animCurveTA -n "PALbot_R_IK_foot_tip_rotateZ";
 	rename -uid "09B4F934-44E7-2EF5-99EF-B3A4F6C56F31";
-	setAttr ".tan" 9;
+	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 24 ".ktv[0:23]"  0 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0 100 0
+	setAttr -s 28 ".ktv[0:27]"  0 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0 100 0
 		 101 0 102 0 104 0 106 0 108 0 108.00000017006802 0.4990386647587296 109 0 109.00000017006802 0.4990386647587296
-		 110 0 112 0 114 0 116 0 200 0 224 0 300 0;
-	setAttr -s 24 ".kit[0:23]"  10 10 10 10 10 10 10 10 
-		9 10 9 9 9 9 9 9 9 9 9 9 9 10 1 10;
-	setAttr -s 24 ".kot[0:23]"  10 10 10 10 10 10 10 5 
-		9 5 9 9 9 9 9 9 9 9 9 9 5 5 5 10;
-	setAttr -s 24 ".kix[22:23]"  1 1;
-	setAttr -s 24 ".kiy[22:23]"  0 0;
+		 110 0 112 0 114 0 116 0 200 0 224 0 300 0 312 0 313 0 314 0 316 0;
+	setAttr -s 28 ".kit[8:27]"  9 10 9 9 9 9 9 9 
+		9 9 9 9 9 10 1 10 10 10 10 10;
+	setAttr -s 28 ".kot[7:27]"  5 9 5 9 9 9 9 9 
+		9 9 9 9 9 5 5 5 10 10 10 10 10;
+	setAttr -s 28 ".kix[22:27]"  1 1 1 1 1 1;
+	setAttr -s 28 ".kiy[22:27]"  0 0 0 0 0 0;
 createNode animCurveTL -n "PALbot_R_IK_foot_tip_translateX";
 	rename -uid "2E2C0ADE-4955-D926-68D1-6CB3248EBB03";
-	setAttr ".tan" 9;
+	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 24 ".ktv[0:23]"  0 0 6 0 9 0 12 0 15 0 18 0.29416597826714158
+	setAttr -s 28 ".ktv[0:27]"  0 0 6 0 9 0 12 0 15 0 18 0.29416597826714158
 		 21 0.24898332696383185 24 0 100 0 101 -8.7812402090094617e-07 102 0 104 0 106 0 108 0
 		 108.00000017006802 0 109 0 109.00000017006802 0 110 0 112 0 114 0 116 0 200 0 224 0
-		 300 0;
-	setAttr -s 24 ".kit[0:23]"  10 10 10 10 10 10 10 10 
-		9 10 9 9 9 9 9 9 9 9 9 9 9 10 1 10;
-	setAttr -s 24 ".kot[0:23]"  10 10 10 10 10 10 10 5 
-		9 5 9 9 9 9 9 9 9 9 9 9 5 5 5 10;
-	setAttr -s 24 ".kix[22:23]"  1 1;
-	setAttr -s 24 ".kiy[22:23]"  0 0;
+		 300 0 312 0 313 -0.014812791460524758 314 -0.029625582921052187 316 0;
+	setAttr -s 28 ".kit[8:27]"  9 10 9 9 9 9 9 9 
+		9 9 9 9 9 10 1 10 10 10 10 10;
+	setAttr -s 28 ".kot[7:27]"  5 9 5 9 9 9 9 9 
+		9 9 9 9 9 5 5 5 10 10 10 10 10;
+	setAttr -s 28 ".kix[22:27]"  1 1 1 1 1 1;
+	setAttr -s 28 ".kiy[22:27]"  0 0 0 0 0 0;
 createNode animCurveTL -n "PALbot_R_IK_foot_tip_translateY";
 	rename -uid "26B53693-4A42-E660-2288-38877E0A2085";
-	setAttr ".tan" 9;
+	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 24 ".ktv[0:23]"  0 0 6 0 9 -1.0369325487306309 12 -1.0369325487306309
+	setAttr -s 28 ".ktv[0:27]"  0 0 6 0 9 -1.0369325487306309 12 -1.0369325487306309
 		 15 -0.43959517365574463 18 0.88106182964475721 21 0 24 0 100 0 101 -0.48754512756502677
 		 102 -0.43477054959900663 104 -0.62163093856709217 106 -0.62163093856709217 108 0
 		 108.00000017006802 0 109 0 109.00000017006802 0 110 -0.14379823360719968 112 0.51838505901063314
-		 114 0.51838505901063314 116 0 200 0 224 0 300 0;
-	setAttr -s 24 ".kit[0:23]"  10 10 10 10 10 10 10 10 
-		9 10 9 9 9 9 9 9 9 9 9 9 9 10 1 10;
-	setAttr -s 24 ".kot[0:23]"  10 10 10 10 10 10 10 5 
-		9 5 9 9 9 9 9 9 9 9 9 9 5 5 5 10;
-	setAttr -s 24 ".kix[22:23]"  1 1;
-	setAttr -s 24 ".kiy[22:23]"  0 0;
+		 114 0.51838505901063314 116 0 200 0 224 0 300 0 312 0 313 -0.17833419718367632 314 -0.48088746765772683
+		 316 0;
+	setAttr -s 28 ".kit[8:27]"  9 10 9 9 9 9 9 9 
+		9 9 9 9 9 10 1 10 10 10 10 10;
+	setAttr -s 28 ".kot[7:27]"  5 9 5 9 9 9 9 9 
+		9 9 9 9 9 5 5 5 10 10 10 10 10;
+	setAttr -s 28 ".kix[22:27]"  1 1 1 0.17074595619855046 0.57397399221877943 
+		0.17074595619854693;
+	setAttr -s 28 ".kiy[22:27]"  0 0 0 -0.98531508586940986 0.81887352885316578 
+		0.98531508586941052;
 createNode animCurveTL -n "PALbot_R_IK_foot_tip_translateZ";
 	rename -uid "3FF41531-4E11-7A1A-5004-AA8588F16945";
-	setAttr ".tan" 9;
+	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 24 ".ktv[0:23]"  0 0 6 0 9 0 12 0 15 0 18 1.6836408049517464
+	setAttr -s 28 ".ktv[0:27]"  0 0 6 0 9 0 12 0 15 0 18 1.6836408049517464
 		 21 1.4250406913074958 24 0 100 0 101 0.00053139761691781541 102 0 104 0 106 0 108 0
 		 108.00000017006802 0 109 0 109.00000017006802 0 110 -1.3461163022436695 112 0.4076590522586363
-		 114 0.4076590522586363 116 0 200 0 224 0 300 0;
-	setAttr -s 24 ".kit[0:23]"  10 10 10 10 10 10 10 10 
-		9 10 9 9 9 9 9 9 9 9 9 9 9 10 1 10;
-	setAttr -s 24 ".kot[0:23]"  10 10 10 10 10 10 10 5 
-		9 5 9 9 9 9 9 9 9 9 9 9 5 5 5 10;
-	setAttr -s 24 ".kix[22:23]"  1 1;
-	setAttr -s 24 ".kiy[22:23]"  0 0;
+		 114 0.4076590522586363 116 0 200 0 224 0 300 0 312 0 313 -0.06416124884207125 314 -0.12832249768414622
+		 316 0;
+	setAttr -s 28 ".kit[8:27]"  9 10 9 9 9 9 9 9 
+		9 9 9 9 9 10 1 10 10 10 10 10;
+	setAttr -s 28 ".kot[7:27]"  5 9 5 9 9 9 9 9 
+		9 9 9 9 9 5 5 5 10 10 10 10 10;
+	setAttr -s 28 ".kix[22:27]"  1 1 1 0.54463778904746851 0.88964781125076364 
+		0.5446377890474603;
+	setAttr -s 28 ".kiy[22:27]"  0 0 0 -0.83867137708490158 0.45664731679571424 
+		0.83867137708490691;
 createNode animCurveTA -n "PALbot_R_IK_footBall_ctrl_rotateX";
 	rename -uid "5854CA12-4146-A281-A93E-288C95E09919";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 22 ".ktv[0:21]"  0 -20.016269439213129 3 0 6 0 9 -35.604319745559046
+	setAttr -s 26 ".ktv[0:25]"  0 -20.016269439213129 3 0 6 0 9 -35.604319745559046
 		 12 -35.604319745559046 15 -17.260239308129869 18 6.7719040243730548 21 23.661297399908698
 		 24 -20.016269439213129 100 0 101 -17.015783493663449 102 -13.465598098743337 104 -19.682737967414528
 		 106 -26.747089502261282 108 -5.8470432546557483 110 20.208126666361547 112 31.230800452645898
-		 114 20.852152449460164 116 0 200 0 224 0 300 0;
-	setAttr -s 22 ".kit[0:21]"  1 10 10 10 10 10 10 10 
-		1 9 10 9 9 9 9 9 9 9 9 10 1 10;
-	setAttr -s 22 ".kot[0:21]"  1 10 10 10 10 10 10 10 
-		5 9 5 9 9 9 9 9 9 9 5 5 5 10;
-	setAttr -s 22 ".kix[0:21]"  0.10811569785299882 1 1 1 1 0.32021952349473898 
+		 114 20.852152449460164 116 0 200 0 224 0 300 0 312 0 313 -5.5298480866688173 314 -15.154514330217694
+		 316 0;
+	setAttr -s 26 ".kit[0:25]"  1 10 10 10 10 10 10 10 
+		1 9 10 9 9 9 9 9 9 9 9 10 1 10 10 10 10 
+		10;
+	setAttr -s 26 ".kot[0:25]"  1 10 10 10 10 10 10 10 
+		5 9 5 9 9 9 9 9 9 9 5 5 5 10 10 10 10 
+		10;
+	setAttr -s 26 ".kix[0:25]"  0.10811569785299882 1 1 1 1 0.32021952349473898 
 		0.33037933585736995 0.47153417027842309 0.10811569785299882 0.99986681288983048 0.33419429643260151 
 		0.9371348131847097 0.58376602083480489 0.56803275975491307 0.19929077689169528 0.24940834448919455 
-		0.99773350219647849 0.29240202267625104 0.9948819093390272 1 1 1;
-	setAttr -s 22 ".kiy[0:21]"  -0.99413831828260146 0 0 0 0 0.94734336793625273 
+		0.99773350219647849 0.29240202267625104 0.9948819093390272 1 1 1 1 0.30050247057325946 
+		0.79152039568050969 0.30050247057325358;
+	setAttr -s 26 ".kiy[0:25]"  -0.99413831828260146 0 0 0 0 0.94734336793625273 
 		0.94384823697374298 -0.88184779086860521 -0.99413831828260146 0.016320431413798363 
 		-0.94250420276618319 -0.34896753705360545 -0.81192193770010812 0.82300594399142546 
 		0.97994039933350263 0.96839840855877035 0.067289364648133551 -0.95629548630893224 
-		-0.10104447768152262 0 0 0;
-	setAttr -s 22 ".kox[0:21]"  0.1128256476845111 1 1 1 1 0.32021952349473898 
+		-0.10104447768152262 0 0 0 0 -0.95378103628629951 0.61114275191788825 0.95378103628630129;
+	setAttr -s 26 ".kox[0:25]"  0.1128256476845111 1 1 1 1 0.32021952349473898 
 		0.33037933585736995 0.47153417027842309 0 0.99986681288983048 0 0.9371348131847097 
 		0.58376602083480489 0.56803275975491307 0.19929077689169528 0.24940834448919455 0.99773350219647849 
-		0.29240202267625104 0 0 0 1;
-	setAttr -s 22 ".koy[0:21]"  -0.99361480123062307 0 0 0 0 0.94734336793625273 
+		0.29240202267625104 0 0 0 1 1 0.30050247057325946 0.79152039568050969 0.30050247057325363;
+	setAttr -s 26 ".koy[0:25]"  -0.99361480123062307 0 0 0 0 0.94734336793625273 
 		0.94384823697374298 -0.88184779086860521 0 0.016320431413798363 0 -0.34896753705360545 
 		-0.81192193770010812 0.82300594399142546 0.97994039933350263 0.96839840855877035 
-		0.067289364648133551 -0.95629548630893224 0 0 0 0;
+		0.067289364648133551 -0.95629548630893224 0 0 0 0 0 -0.95378103628629951 0.61114275191788825 
+		0.9537810362863014;
 createNode animCurveTA -n "PALbot_R_IK_footBall_ctrl_rotateY";
 	rename -uid "0DF8073C-4F34-84AA-4B37-F990B6291952";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 22 ".ktv[0:21]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
-		 100 0 101 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 0 224 0 300 0;
-	setAttr -s 22 ".kit[9:21]"  9 10 9 9 9 9 9 9 
-		9 9 10 1 10;
-	setAttr -s 22 ".kot[8:21]"  5 9 5 9 9 9 9 9 
-		9 9 5 5 5 10;
-	setAttr -s 22 ".kix[20:21]"  1 1;
-	setAttr -s 22 ".kiy[20:21]"  0 0;
+	setAttr -s 26 ".ktv[0:25]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
+		 100 0 101 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 0 224 0 300 0 312 0
+		 313 0 314 0 316 0;
+	setAttr -s 26 ".kit[9:25]"  9 10 9 9 9 9 9 9 
+		9 9 10 1 10 10 10 10 10;
+	setAttr -s 26 ".kot[8:25]"  5 9 5 9 9 9 9 9 
+		9 9 5 5 5 10 10 10 10 10;
+	setAttr -s 26 ".kix[20:25]"  1 1 1 1 1 1;
+	setAttr -s 26 ".kiy[20:25]"  0 0 0 0 0 0;
 createNode animCurveTA -n "PALbot_R_IK_footBall_ctrl_rotateZ";
 	rename -uid "95D6816D-4A95-F84A-7EC5-9198B324B6B7";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 22 ".ktv[0:21]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
-		 100 0 101 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 0 224 0 300 0;
-	setAttr -s 22 ".kit[9:21]"  9 10 9 9 9 9 9 9 
-		9 9 10 1 10;
-	setAttr -s 22 ".kot[8:21]"  5 9 5 9 9 9 9 9 
-		9 9 5 5 5 10;
-	setAttr -s 22 ".kix[20:21]"  1 1;
-	setAttr -s 22 ".kiy[20:21]"  0 0;
+	setAttr -s 26 ".ktv[0:25]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
+		 100 0 101 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 0 224 0 300 0 312 0
+		 313 0 314 0 316 0;
+	setAttr -s 26 ".kit[9:25]"  9 10 9 9 9 9 9 9 
+		9 9 10 1 10 10 10 10 10;
+	setAttr -s 26 ".kot[8:25]"  5 9 5 9 9 9 9 9 
+		9 9 5 5 5 10 10 10 10 10;
+	setAttr -s 26 ".kix[20:25]"  1 1 1 1 1 1;
+	setAttr -s 26 ".kiy[20:25]"  0 0 0 0 0 0;
 createNode animCurveTL -n "PALbot_R_IK_footBall_ctrl_translateX";
 	rename -uid "260C201D-48B6-50D0-537B-48833642E5BD";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 22 ".ktv[0:21]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
-		 100 0 101 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 0 224 0 300 0;
-	setAttr -s 22 ".kit[9:21]"  9 10 9 9 9 9 9 9 
-		9 9 10 1 10;
-	setAttr -s 22 ".kot[8:21]"  5 9 5 9 9 9 9 9 
-		9 9 5 5 5 10;
-	setAttr -s 22 ".kix[20:21]"  1 1;
-	setAttr -s 22 ".kiy[20:21]"  0 0;
+	setAttr -s 26 ".ktv[0:25]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
+		 100 0 101 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 0 224 0 300 0 312 0
+		 313 0 314 0 316 0;
+	setAttr -s 26 ".kit[9:25]"  9 10 9 9 9 9 9 9 
+		9 9 10 1 10 10 10 10 10;
+	setAttr -s 26 ".kot[8:25]"  5 9 5 9 9 9 9 9 
+		9 9 5 5 5 10 10 10 10 10;
+	setAttr -s 26 ".kix[20:25]"  1 1 1 1 1 1;
+	setAttr -s 26 ".kiy[20:25]"  0 0 0 0 0 0;
 createNode animCurveTL -n "PALbot_R_IK_footBall_ctrl_translateY";
 	rename -uid "494BFC43-4F76-B193-EF7C-FEA7239220FC";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 22 ".ktv[0:21]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
-		 100 0 101 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 0 224 0 300 0;
-	setAttr -s 22 ".kit[9:21]"  9 10 9 9 9 9 9 9 
-		9 9 10 1 10;
-	setAttr -s 22 ".kot[8:21]"  5 9 5 9 9 9 9 9 
-		9 9 5 5 5 10;
-	setAttr -s 22 ".kix[20:21]"  1 1;
-	setAttr -s 22 ".kiy[20:21]"  0 0;
+	setAttr -s 26 ".ktv[0:25]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
+		 100 0 101 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 0 224 0 300 0 312 0
+		 313 0 314 0 316 0;
+	setAttr -s 26 ".kit[9:25]"  9 10 9 9 9 9 9 9 
+		9 9 10 1 10 10 10 10 10;
+	setAttr -s 26 ".kot[8:25]"  5 9 5 9 9 9 9 9 
+		9 9 5 5 5 10 10 10 10 10;
+	setAttr -s 26 ".kix[20:25]"  1 1 1 1 1 1;
+	setAttr -s 26 ".kiy[20:25]"  0 0 0 0 0 0;
 createNode animCurveTL -n "PALbot_R_IK_footBall_ctrl_translateZ";
 	rename -uid "408995DB-4A54-9BFC-0446-17917B342BD4";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 22 ".ktv[0:21]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
-		 100 0 101 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 0 224 0 300 0;
-	setAttr -s 22 ".kit[9:21]"  9 10 9 9 9 9 9 9 
-		9 9 10 1 10;
-	setAttr -s 22 ".kot[8:21]"  5 9 5 9 9 9 9 9 
-		9 9 5 5 5 10;
-	setAttr -s 22 ".kix[20:21]"  1 1;
-	setAttr -s 22 ".kiy[20:21]"  0 0;
+	setAttr -s 26 ".ktv[0:25]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
+		 100 0 101 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 0 224 0 300 0 312 0
+		 313 0 314 0 316 0;
+	setAttr -s 26 ".kit[9:25]"  9 10 9 9 9 9 9 9 
+		9 9 10 1 10 10 10 10 10;
+	setAttr -s 26 ".kot[8:25]"  5 9 5 9 9 9 9 9 
+		9 9 5 5 5 10 10 10 10 10;
+	setAttr -s 26 ".kix[20:25]"  1 1 1 1 1 1;
+	setAttr -s 26 ".kiy[20:25]"  0 0 0 0 0 0;
 createNode animCurveTA -n "PALbot_R_IK_heel_lift_tip_rotateX";
 	rename -uid "E529DFE8-41F2-670A-B230-A9B2BE3809F7";
 	setAttr ".tan" 5;
@@ -2614,101 +1803,115 @@ createNode animCurveTL -n "PALbot_L_IK_footBall_ctrl_translateX";
 	rename -uid "B9A61E0B-4D4F-6B25-DBC1-EE9BA0AA443B";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 23 ".ktv[0:22]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
+	setAttr -s 27 ".ktv[0:26]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
 		 100 0 102 0 104 0 106 0 108 0 108.00000017006802 0 109 0 110 0 112 0 114 0 116 0
-		 200 0 224 0 300 0;
-	setAttr -s 23 ".kit[9:22]"  9 9 9 9 9 9 1 9 
-		9 9 9 10 1 10;
-	setAttr -s 23 ".kot[8:22]"  5 9 9 9 9 9 9 5 
-		9 9 9 5 5 5 10;
-	setAttr -s 23 ".kix[15:22]"  1 1 1 1 1 1 1 1;
-	setAttr -s 23 ".kiy[15:22]"  0 0 0 0 0 0 0 0;
+		 200 0 224 0 300 0 312 0 313 0 314 0 316 0;
+	setAttr -s 27 ".kit[9:26]"  9 9 9 9 9 9 1 9 
+		9 9 9 10 1 10 10 10 10 1;
+	setAttr -s 27 ".kot[8:26]"  5 9 9 9 9 9 9 5 
+		9 9 9 5 5 5 10 1 10 10 10;
+	setAttr -s 27 ".kix[15:26]"  1 1 1 1 1 1 1 1 1 1 1 1;
+	setAttr -s 27 ".kiy[15:26]"  0 0 0 0 0 0 0 0 0 0 0 0;
+	setAttr -s 27 ".kox[23:26]"  1 1 1 1;
+	setAttr -s 27 ".koy[23:26]"  0 0 0 0;
 createNode animCurveTL -n "PALbot_L_IK_footBall_ctrl_translateY";
 	rename -uid "93804BE9-4A5E-4673-8A97-53BB756D1A54";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 23 ".ktv[0:22]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
+	setAttr -s 27 ".ktv[0:26]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
 		 100 0 102 0 104 0 106 0 108 0 108.00000017006802 0 109 0 110 0 112 0 114 0 116 0
-		 200 0 224 0 300 0;
-	setAttr -s 23 ".kit[9:22]"  9 9 9 9 9 9 1 9 
-		9 9 9 10 1 10;
-	setAttr -s 23 ".kot[8:22]"  5 9 9 9 9 9 9 5 
-		9 9 9 5 5 5 10;
-	setAttr -s 23 ".kix[15:22]"  1 1 1 1 1 1 1 1;
-	setAttr -s 23 ".kiy[15:22]"  0 0 0 0 0 0 0 0;
+		 200 0 224 0 300 0 312 0 313 0 314 0 316 0;
+	setAttr -s 27 ".kit[9:26]"  9 9 9 9 9 9 1 9 
+		9 9 9 10 1 10 10 10 10 1;
+	setAttr -s 27 ".kot[8:26]"  5 9 9 9 9 9 9 5 
+		9 9 9 5 5 5 10 1 10 10 10;
+	setAttr -s 27 ".kix[15:26]"  1 1 1 1 1 1 1 1 1 1 1 1;
+	setAttr -s 27 ".kiy[15:26]"  0 0 0 0 0 0 0 0 0 0 0 0;
+	setAttr -s 27 ".kox[23:26]"  1 1 1 1;
+	setAttr -s 27 ".koy[23:26]"  0 0 0 0;
 createNode animCurveTL -n "PALbot_L_IK_footBall_ctrl_translateZ";
 	rename -uid "4A34DA10-4B3E-10D2-4616-7DAE81A2B240";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 23 ".ktv[0:22]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
+	setAttr -s 27 ".ktv[0:26]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
 		 100 0 102 0 104 0 106 0 108 0 108.00000017006802 0 109 0 110 0 112 0 114 0 116 0
-		 200 0 224 0 300 0;
-	setAttr -s 23 ".kit[9:22]"  9 9 9 9 9 9 1 9 
-		9 9 9 10 1 10;
-	setAttr -s 23 ".kot[8:22]"  5 9 9 9 9 9 9 5 
-		9 9 9 5 5 5 10;
-	setAttr -s 23 ".kix[15:22]"  1 1 1 1 1 1 1 1;
-	setAttr -s 23 ".kiy[15:22]"  0 0 0 0 0 0 0 0;
+		 200 0 224 0 300 0 312 0 313 0 314 0 316 0;
+	setAttr -s 27 ".kit[9:26]"  9 9 9 9 9 9 1 9 
+		9 9 9 10 1 10 10 10 10 1;
+	setAttr -s 27 ".kot[8:26]"  5 9 9 9 9 9 9 5 
+		9 9 9 5 5 5 10 1 10 10 10;
+	setAttr -s 27 ".kix[15:26]"  1 1 1 1 1 1 1 1 1 1 1 1;
+	setAttr -s 27 ".kiy[15:26]"  0 0 0 0 0 0 0 0 0 0 0 0;
+	setAttr -s 27 ".kox[23:26]"  1 1 1 1;
+	setAttr -s 27 ".koy[23:26]"  0 0 0 0;
 createNode animCurveTA -n "PALbot_L_IK_footBall_ctrl_rotateX";
 	rename -uid "5E212279-4920-1ECE-0B73-CDACC5052621";
-	setAttr ".tan" 9;
+	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 23 ".ktv[0:22]"  0 -35.604319745559046 3 -17.260239308129869
+	setAttr -s 27 ".ktv[0:26]"  0 -35.604319745559046 3 -17.260239308129869
 		 6 6.7719040243730548 9 23.661297399908698 12 -20.016269439213129 15 0 18 0 21 -35.604319745559046
 		 24 -35.604319745559046 100 -5.8470432546557483 102 20.208126666361547 104 31.230800452645898
 		 106 20.852152449460164 108 0 108.00000017006802 0 109 -17.015783493663449 110 -13.465598098743337
 		 112 -19.682737967414528 114 -26.747089502261282 116 -5.8470432546557483 200 0 224 0
-		 300 0;
-	setAttr -s 23 ".kit[0:22]"  1 10 10 10 1 10 10 10 
-		1 9 9 9 9 9 9 1 9 9 9 9 10 1 10;
-	setAttr -s 23 ".kot[0:22]"  1 10 10 10 1 10 10 10 
-		5 9 9 9 9 9 9 5 9 9 9 5 5 5 10;
-	setAttr -s 23 ".kix[0:22]"  0.99985891959271411 0.32021952349473898 
+		 300 0 312 0 313 -5.5298480866688173 314 -15.154514330217694 316 0;
+	setAttr -s 27 ".kit[0:26]"  1 10 10 10 1 10 10 10 
+		1 9 9 9 9 9 9 1 9 9 9 9 10 1 10 10 10 
+		10 1;
+	setAttr -s 27 ".kot[0:26]"  1 10 10 10 1 10 10 10 
+		5 9 9 9 9 9 9 5 9 9 9 5 5 5 10 1 10 
+		10 10;
+	setAttr -s 27 ".kix[0:26]"  0.99985891959271411 0.32021952349473898 
 		0.33037933585736995 0.47153417027842309 0.11600642126260306 1 1 1 0.99985891959271411 
 		0.95789837498641306 0.24940834448919327 0.99773350219647849 0.29240202267625243 0.22319984680854785 
 		0.13893977267360239 0.33419429643260151 0.9371348131847097 0.58376602083480489 0.56803275975491097 
-		0.99162050613909725 1 0.999575200044026 1;
-	setAttr -s 23 ".kiy[0:22]"  -0.016797050660475061 0.94734336793625273 
+		0.99162050613909725 1 0.999575200044026 1 1 0.30050247057325946 0.79152039568050969 
+		0.30050247057325358;
+	setAttr -s 27 ".kiy[0:26]"  -0.016797050660475061 0.94734336793625273 
 		0.94384823697374298 -0.88184779086860521 -0.99324846349030083 0 0 0 -0.016797050660475061 
 		0.28710747673717812 0.96839840855877068 0.067289364648133551 -0.9562954863089318 
 		-0.97477270601132482 -0.99030083286312931 -0.94250420276618319 -0.34896753705360545 
 		-0.81192193770010812 0.82300594399142679 0.12918502933560227 0 0.029144801542389874 
-		0;
-	setAttr -s 23 ".kox[0:22]"  0.99990259302969609 0.32021952349473898 
+		0 0 -0.95378103628629951 0.61114275191788825 0.95378103628630129;
+	setAttr -s 27 ".kox[0:26]"  0.99990259302969609 0.32021952349473898 
 		0.33037933585736995 0.47153417027842309 0.11600646213124216 1 1 1 0 0.95789837498641306 
 		0.24940834448919327 0.99773350219647849 0.29240202267625243 0.22319984680854785 0.13893977267360239 
-		0 0.9371348131847097 0.58376602083480489 0.56803275975491097 0 0 0 1;
-	setAttr -s 23 ".koy[0:22]"  0.013957236563519781 0.94734336793625273 
+		0 0.9371348131847097 0.58376602083480489 0.56803275975491097 0 0 0 1 1 0.30050247057325946 
+		0.79152039568050969 0.30050247057325363;
+	setAttr -s 27 ".koy[0:26]"  0.013957236563519781 0.94734336793625273 
 		0.94384823697374298 -0.88184779086860521 -0.99324845871704859 0 0 0 0 0.28710747673717812 
 		0.96839840855877068 0.067289364648133551 -0.9562954863089318 -0.97477270601132482 
 		-0.99030083286312931 0 -0.34896753705360545 -0.81192193770010812 0.82300594399142679 
-		0 0 0 0;
+		0 0 0 0 0 -0.95378103628629951 0.61114275191788825 0.9537810362863014;
 createNode animCurveTA -n "PALbot_L_IK_footBall_ctrl_rotateY";
 	rename -uid "856DBEF5-4CF4-68A5-1CFA-0E89ED8E81B4";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 23 ".ktv[0:22]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
+	setAttr -s 27 ".ktv[0:26]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
 		 100 0 102 0 104 0 106 0 108 0 108.00000017006802 0 109 0 110 0 112 0 114 0 116 0
-		 200 0 224 0 300 0;
-	setAttr -s 23 ".kit[9:22]"  9 9 9 9 9 9 1 9 
-		9 9 9 10 1 10;
-	setAttr -s 23 ".kot[8:22]"  5 9 9 9 9 9 9 5 
-		9 9 9 5 5 5 10;
-	setAttr -s 23 ".kix[15:22]"  1 1 1 1 1 1 1 1;
-	setAttr -s 23 ".kiy[15:22]"  0 0 0 0 0 0 0 0;
+		 200 0 224 0 300 0 312 0 313 0 314 0 316 0;
+	setAttr -s 27 ".kit[9:26]"  9 9 9 9 9 9 1 9 
+		9 9 9 10 1 10 10 10 10 1;
+	setAttr -s 27 ".kot[8:26]"  5 9 9 9 9 9 9 5 
+		9 9 9 5 5 5 10 1 10 10 10;
+	setAttr -s 27 ".kix[15:26]"  1 1 1 1 1 1 1 1 1 1 1 1;
+	setAttr -s 27 ".kiy[15:26]"  0 0 0 0 0 0 0 0 0 0 0 0;
+	setAttr -s 27 ".kox[23:26]"  1 1 1 1;
+	setAttr -s 27 ".koy[23:26]"  0 0 0 0;
 createNode animCurveTA -n "PALbot_L_IK_footBall_ctrl_rotateZ";
 	rename -uid "A2D8EAEA-4A32-7687-C57E-7999715975CF";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 23 ".ktv[0:22]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
+	setAttr -s 27 ".ktv[0:26]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
 		 100 0 102 0 104 0 106 0 108 0 108.00000017006802 0 109 0 110 0 112 0 114 0 116 0
-		 200 0 224 0 300 0;
-	setAttr -s 23 ".kit[9:22]"  9 9 9 9 9 9 1 9 
-		9 9 9 10 1 10;
-	setAttr -s 23 ".kot[8:22]"  5 9 9 9 9 9 9 5 
-		9 9 9 5 5 5 10;
-	setAttr -s 23 ".kix[15:22]"  1 1 1 1 1 1 1 1;
-	setAttr -s 23 ".kiy[15:22]"  0 0 0 0 0 0 0 0;
+		 200 0 224 0 300 0 312 0 313 0 314 0 316 0;
+	setAttr -s 27 ".kit[9:26]"  9 9 9 9 9 9 1 9 
+		9 9 9 10 1 10 10 10 10 1;
+	setAttr -s 27 ".kot[8:26]"  5 9 9 9 9 9 9 5 
+		9 9 9 5 5 5 10 1 10 10 10;
+	setAttr -s 27 ".kix[15:26]"  1 1 1 1 1 1 1 1 1 1 1 1;
+	setAttr -s 27 ".kiy[15:26]"  0 0 0 0 0 0 0 0 0 0 0 0;
+	setAttr -s 27 ".kox[23:26]"  1 1 1 1;
+	setAttr -s 27 ".koy[23:26]"  0 0 0 0;
 createNode animCurveTL -n "PALbot_L_IK_heel_lift_tip_translateX";
 	rename -uid "61129A7E-4025-47C2-7CE3-9D9C1E10A817";
 	setAttr ".tan" 2;
@@ -2768,165 +1971,173 @@ createNode animCurveTL -n "PALbot_L_IK_foot_tip_translateZ";
 	rename -uid "128492A7-4BC7-1251-C2D7-9787BBC754BB";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr -s 26 ".ktv[0:25]"  0 0 3 0 6 1.6836408049517464 9 1.4250406913074958
+	setAttr -s 30 ".ktv[0:29]"  0 0 3 0 6 1.6836408049517464 9 1.4250406913074958
 		 12 0 18 0 21 0 24 0 100 0 100.00000017006802 0 101 0 101.00000017006802 0 102 -1.3461163022436695
 		 104 0.4076590522586363 106 0.4076590522586363 108 0 108.00000017006802 0 109 0.00053139761691781541
-		 110 0 112 0 114 0 116 0 116.00000017006802 0 200 0 224 0 300 0;
-	setAttr -s 26 ".kit[0:25]"  10 10 10 1 10 10 10 10 
+		 110 0 112 0 114 0 116 0 116.00000017006802 0 200 0 224 0 300 0 312 0 313 -0.06416124884207125
+		 314 -0.12832249768414622 316 0;
+	setAttr -s 30 ".kit[0:29]"  10 10 10 1 10 10 10 10 
 		9 9 9 9 9 9 9 9 9 1 9 9 9 9 9 10 1 
-		10;
-	setAttr -s 26 ".kot[0:25]"  10 10 1 10 10 10 10 5 
+		10 10 10 10 1;
+	setAttr -s 30 ".kot[0:29]"  10 10 1 10 10 10 10 5 
 		9 9 9 9 9 9 9 9 9 5 9 9 9 5 5 5 5 
-		10;
-	setAttr -s 26 ".kix[3:25]"  0.146877337325198 1 1 1 1 1 1 1 0.03093842667454241 
+		10 1 10 10 10;
+	setAttr -s 30 ".kix[3:29]"  0.146877337325198 1 1 1 1 1 1 1 0.03093842667454241 
 		0.29315683799447134 0.094606825671206277 0.37843259974285598 0.20027751274889427 
-		0.9999186834925845 1 0.99999096385280684 1 1 1 1 1 1 1;
-	setAttr -s 26 ".kiy[3:25]"  -0.9891547137734622 0 0 0 0 0 0 0 -0.99952129229691944 
+		0.9999186834925845 1 0.99999096385280684 1 1 1 1 1 1 1 1 0.54463778904746851 0.88964781125076364 
+		0.5446377890474603;
+	setAttr -s 30 ".kiy[3:29]"  -0.9891547137734622 0 0 0 0 0 0 0 -0.99952129229691944 
 		0.95606436411838047 0.99551471537914393 -0.92562884972966541 -0.979739209120017 0.012752505732469319 
-		0 -0.0042511425210458465 0 0 0 0 0 0 0;
-	setAttr -s 26 ".kox[2:25]"  0.17279469113491217 0.146877337325198 1 
+		0 -0.0042511425210458465 0 0 0 0 0 0 0 0 -0.83867137708490158 0.45664731679571424 
+		0.83867137708490691;
+	setAttr -s 30 ".kox[2:29]"  0.17279469113491217 0.146877337325198 1 
 		1 1 0 1 1 1 0.03093842667454241 0.29315683799447134 0.094606825671206277 0.37843259974285598 
-		0.20027751274889427 0.9999186834925845 0 0.99999096385280684 1 1 0 0 0 0 1;
-	setAttr -s 26 ".koy[2:25]"  0.98495786443664179 -0.9891547137734622 
+		0.20027751274889427 0.9999186834925845 0 0.99999096385280684 1 1 0 0 0 0 1 1 0.54463778904746851 
+		0.88964781125076364 0.5446377890474603;
+	setAttr -s 30 ".koy[2:29]"  0.98495786443664179 -0.9891547137734622 
 		0 0 0 0 0 0 0 -0.99952129229691944 0.95606436411838047 0.99551471537914393 -0.92562884972966541 
-		-0.979739209120017 0.012752505732469319 0 -0.0042511425210458465 0 0 0 0 0 0 0;
+		-0.979739209120017 0.012752505732469319 0 -0.0042511425210458465 0 0 0 0 0 0 0 0 
+		-0.83867137708490158 0.45664731679571424 0.83867137708490691;
 createNode animCurveTL -n "PALbot_L_IK_foot_tip_translateX";
 	rename -uid "0389A44F-451B-BC2F-B919-1F83A6A86566";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr -s 26 ".ktv[0:25]"  0 0 3 0 6 0.29416597826714158 9 0.24898332696383185
+	setAttr -s 30 ".ktv[0:29]"  0 0 3 0 6 0.29416597826714158 9 0.24898332696383185
 		 12 0 18 0 21 0 24 0 100 0 100.00000017006802 0 101 0 101.00000017006802 0 102 0 104 0
 		 106 0 108 0 108.00000017006802 0 109 -8.7812402090094617e-07 110 0 112 0 114 0 116 0
-		 116.00000017006802 0 200 0 224 0 300 0;
-	setAttr -s 26 ".kit[0:25]"  10 10 10 1 10 10 10 10 
+		 116.00000017006802 0 200 0 224 0 300 0 312 0 313 -0.014812791460524758 314 -0.029625582921052187
+		 316 0;
+	setAttr -s 30 ".kit[0:29]"  10 10 10 1 10 10 10 10 
 		9 9 9 9 9 9 9 9 9 1 9 9 9 9 9 10 1 
-		10;
-	setAttr -s 26 ".kot[0:25]"  10 10 1 10 10 10 10 5 
+		10 10 10 10 1;
+	setAttr -s 30 ".kot[0:29]"  10 10 1 10 10 10 10 5 
 		9 9 9 9 9 9 9 9 9 5 9 9 9 5 5 5 5 
-		10;
-	setAttr -s 26 ".kix[3:25]"  1 1 1 1 1 1 1 1 1 1 1 1 1 0.99999999977792275 
-		1 0.99999999997532485 1 1 1 1 1 1 1;
-	setAttr -s 26 ".kiy[3:25]"  0 0 0 0 0 0 0 0 0 0 0 0 0 -2.1074976496942285e-05 
-		0 7.0249921670342266e-06 0 0 0 0 0 0 0;
-	setAttr -s 26 ".kox[2:25]"  1 1 1 1 1 0 1 1 1 1 1 1 1 1 0.99999999977792275 
-		0 0.99999999997532485 1 1 0 0 0 0 1;
-	setAttr -s 26 ".koy[2:25]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.1074976496942285e-05 
-		0 7.0249921670342266e-06 0 0 0 0 0 0 0;
+		10 1 10 10 10;
+	setAttr -s 30 ".kix[3:29]"  1 1 1 1 1 1 1 1 1 1 1 1 1 0.99999999977792275 
+		1 0.99999999997532485 1 1 1 1 1 1 1 1 1 1 1;
+	setAttr -s 30 ".kiy[3:29]"  0 0 0 0 0 0 0 0 0 0 0 0 0 -2.1074976496942285e-05 
+		0 7.0249921670342266e-06 0 0 0 0 0 0 0 0 0 0 0;
+	setAttr -s 30 ".kox[2:29]"  1 1 1 1 1 0 1 1 1 1 1 1 1 1 0.99999999977792275 
+		0 0.99999999997532485 1 1 0 0 0 0 1 1 1 1 1;
+	setAttr -s 30 ".koy[2:29]"  0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.1074976496942285e-05 
+		0 7.0249921670342266e-06 0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTL -n "PALbot_L_IK_foot_tip_translateY";
 	rename -uid "EE749AAB-4358-C9EA-C0EF-C782837C5F09";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr -s 26 ".ktv[0:25]"  0 -1.0369325487306309 3 -0.43959517365574463
+	setAttr -s 30 ".ktv[0:29]"  0 -1.0369325487306309 3 -0.43959517365574463
 		 6 0.88106182964475721 9 0 12 0 18 0 21 -1.0369325487306309 24 -1.0369325487306309
 		 100 0 100.00000017006802 0 101 0 101.00000017006802 0 102 -0.14379823360719968 104 0.51838505901063314
 		 106 0.51838505901063314 108 0 108.00000017006802 0 109 -0.48754512756502677 110 -0.43477054959900663
 		 112 -0.62163093856709217 114 -0.62163093856709217 116 0 116.00000017006802 0 200 0
-		 224 0 300 0;
-	setAttr -s 26 ".kit[0:25]"  10 10 10 1 10 10 10 10 
+		 224 0 300 0 312 0 313 -0.17833419718367632 314 -0.48088746765772683 316 0;
+	setAttr -s 30 ".kit[0:29]"  10 10 10 1 10 10 10 10 
 		9 9 9 9 9 9 9 9 9 1 9 9 9 9 9 10 1 
-		10;
-	setAttr -s 26 ".kot[0:25]"  10 10 1 10 10 10 10 5 
+		10 10 10 10 1;
+	setAttr -s 30 ".kot[0:29]"  10 10 1 10 10 10 10 5 
 		9 9 9 9 9 9 9 9 9 5 9 9 9 5 5 5 5 
-		10;
-	setAttr -s 26 ".kix[3:25]"  1 1 1 1 1 0.95034664536564473 1 1 0.2783099010699584 
+		10 1 10 10 10;
+	setAttr -s 30 ".kix[3:29]"  1 1 1 1 1 0.95034664536564473 1 1 0.2783099010699584 
 		0.23441470282647384 0.24408021573443323 0.30608058329624466 0.15871793161523698 0.085151774978900918 
 		0.18824528009817454 0.68189027167727712 0.6656313089635556 0.25896569284839588 0.13286740894604873 
-		1 1 1 1;
-	setAttr -s 26 ".kiy[3:25]"  0 0 0 0 0 0.31119327377413752 0 0 -0.96049133206210147 
+		1 1 1 1 1 0.17074595619855046 0.57397399221877943 0.17074595619854693;
+	setAttr -s 30 ".kiy[3:29]"  0 0 0 0 0 0.31119327377413752 0 0 -0.96049133206210147 
 		0.97213669157108551 0.969755045507386 -0.95200560740419515 -0.98732396820080326 -0.99636799186743386 
 		-0.98212204665243097 -0.73145448073813124 -0.74628075181359432 0.96588652021215737 
-		0.99113382125723237 0 0 0 0;
-	setAttr -s 26 ".kox[2:25]"  0.4943532032958482 1 1 1 1 0 0.95034664536564473 
+		0.99113382125723237 0 0 0 0 0 -0.98531508586940986 0.81887352885316578 0.98531508586941052;
+	setAttr -s 30 ".kox[2:29]"  0.4943532032958482 1 1 1 1 0 0.95034664536564473 
 		1 1 0.2783099010699584 0.23441470282647384 0.24408021573443323 0.30608058329624466 
 		0.15871793161523698 0.085151774978900918 0 0.68189027167727712 0.6656313089635556 
-		0.25896569284839588 0 0 0 0 1;
-	setAttr -s 26 ".koy[2:25]"  0.86926112900044805 0 0 0 0 0 0.31119327377413752 
+		0.25896569284839588 0 0 0 0 1 1 0.17074595619855046 0.57397399221877943 0.17074595619854696;
+	setAttr -s 30 ".koy[2:29]"  0.86926112900044805 0 0 0 0 0 0.31119327377413752 
 		0 0 -0.96049133206210147 0.97213669157108551 0.969755045507386 -0.95200560740419515 
 		-0.98732396820080326 -0.99636799186743386 0 -0.73145448073813124 -0.74628075181359432 
-		0.96588652021215737 0 0 0 0 0;
+		0.96588652021215737 0 0 0 0 0 0 -0.98531508586940986 0.81887352885316578 0.98531508586941063;
 createNode animCurveTA -n "PALbot_L_IK_foot_tip_rotateX";
 	rename -uid "8A0BC18B-439E-BDA4-5E37-1B887390BDB1";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr -s 26 ".ktv[0:25]"  0 41.511530256403908 3 52.231140530351446
+	setAttr -s 30 ".ktv[0:29]"  0 41.511530256403908 3 52.231140530351446
 		 6 104.91463471114237 9 61.752656487810569 12 0 18 0 21 41.511530256403908 24 41.511530256403908
 		 100 79.052163001768307 100.00000017006802 48.09877470333911 101 79.052163001768307
 		 101.00000017006802 48.09877470333911 102 84.845925555873677 104 96.664332092122194
 		 106 68.054625235752425 108 48.09877470333911 108.00000017006802 48.09877470333911
 		 109 32.785088906105202 110 14.054252549570299 112 21.482301128913182 114 43.762600046210657
-		 116 79.052163001768307 116.00000017006802 48.09877470333911 200 0 224 0 300 0;
-	setAttr -s 26 ".kit[0:25]"  1 10 1 1 10 10 10 1 
+		 116 79.052163001768307 116.00000017006802 48.09877470333911 200 0 224 0 300 0 312 0
+		 313 5.469530697121165 314 16.40859209136401 316 43.756245576969867;
+	setAttr -s 30 ".kit[0:29]"  1 10 1 1 10 10 10 1 
 		9 9 9 9 9 9 9 9 9 1 9 9 9 9 9 10 1 
-		10;
-	setAttr -s 26 ".kot[0:25]"  1 10 1 1 10 10 10 5 
+		10 10 10 10 1;
+	setAttr -s 30 ".kot[0:29]"  1 10 1 1 10 10 10 5 
 		9 9 9 9 9 9 9 9 9 5 9 9 9 5 5 5 5 
-		10;
-	setAttr -s 26 ".kix[0:25]"  0.99956525965068854 0.22036501727621605 
+		10 1 10 10 10;
+	setAttr -s 30 ".kix[0:29]"  0.99956525965068854 0.22036501727621605 
 		0.99988546889430174 0.19615796732169322 1 1 1 0.99956525965068854 0.99934158682310748 
 		1 1 0.38097591723081414 0.14589233005319213 0.49435316866037027 0.192932704182424 
 		0.23269295289173592 0.15403428449136561 0.13888792116320328 0.53524089714463419 0.3060145505340624 
 		0.16363731263871756 0.74028069477762293 0.93032382854820317 1 0.97241995250017654 
-		1;
-	setAttr -s 26 ".kiy[0:25]"  0.029483753143918309 0.97541747942142865 
+		1 1 0.27939642222541439 0.18387218607970213 0.17198917965837993;
+	setAttr -s 30 ".kiy[0:29]"  0.029483753143918309 0.97541747942142865 
 		0.015134367975650107 -0.98057230832622511 0 0 0 0.029483753143918309 0.036282128463937455 
 		0 0 0.92458496120699463 0.98930047408845934 -0.86926114869781879 -0.98121199119092362 
 		-0.97255025046242438 -0.98806550349722921 -0.99030810627549837 -0.84469946254499717 
 		0.95202683515825115 0.98652056740464289 0.67229791977928932 -0.36673910895269041 
-		0 -0.23323686668182275 0;
-	setAttr -s 26 ".kox[0:25]"  0.99843917044841302 0.22036501727621605 
+		0 -0.23323686668182275 0 0 0.96017583767122472 0.98295016108970223 0.98509883873672166;
+	setAttr -s 30 ".kox[0:29]"  0.99843917044841302 0.22036501727621605 
 		0.99988546512279886 0.033596580283720714 1 1 1 0 0.99934158682310748 1 1 0.38097591723081414 
 		0.14589233005319213 0.49435316866037027 0.192932704182424 0.23269295289173592 0.15403428449136561 
-		0 0.53524089714463419 0.3060145505340624 0.16363731263871756 0 0 0 0 1;
-	setAttr -s 26 ".koy[0:25]"  0.05585000370890663 0.97541747942142865 
+		0 0.53524089714463419 0.3060145505340624 0.16363731263871756 0 0 0 0 1 1 0.27939642222541439 
+		0.18387218607970213 0.17198917965837993;
+	setAttr -s 30 ".koy[0:29]"  0.05585000370890663 0.97541747942142865 
 		0.015134617146277528 -0.99943547555269396 0 0 0 0 0.036282128463937455 0 0 0.92458496120699463 
 		0.98930047408845934 -0.86926114869781879 -0.98121199119092362 -0.97255025046242438 
 		-0.98806550349722921 0 -0.84469946254499717 0.95202683515825115 0.98652056740464289 
-		0 0 0 0 0;
+		0 0 0 0 0 0 0.96017583767122472 0.98295016108970223 0.98509883873672166;
 createNode animCurveTA -n "PALbot_L_IK_foot_tip_rotateY";
 	rename -uid "F3D1A42D-4EDA-0B22-73C0-58BCFF956A82";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr -s 26 ".ktv[0:25]"  0 0 3 0 6 0 9 0 12 0 18 0 21 0 24 0 100 0
+	setAttr -s 30 ".ktv[0:29]"  0 0 3 0 6 0 9 0 12 0 18 0 21 0 24 0 100 0
 		 100.00000017006802 0.150135976109701 101 0 101.00000017006802 0.150135976109701 102 0
 		 104 0 106 0 108 0 108.00000017006802 0.150135976109701 109 0 110 0 112 0 114 0 116 0
-		 116.00000017006802 0.150135976109701 200 0 224 0 300 0;
-	setAttr -s 26 ".kit[0:25]"  10 10 10 1 10 10 10 10 
+		 116.00000017006802 0.150135976109701 200 0 224 0 300 0 312 0 313 0 314 0 316 0;
+	setAttr -s 30 ".kit[0:29]"  10 10 10 1 10 10 10 10 
 		9 9 9 9 9 9 9 9 9 1 9 9 9 9 9 10 1 
-		10;
-	setAttr -s 26 ".kot[0:25]"  10 10 1 10 10 10 10 5 
+		10 10 10 10 1;
+	setAttr -s 30 ".kot[0:29]"  10 10 1 10 10 10 10 5 
 		9 9 9 9 9 9 9 9 9 5 9 9 9 5 5 5 5 
-		10;
-	setAttr -s 26 ".kix[3:25]"  1 1 1 1 1 0.99999965763500254 1 1 1 0.99978035000435161 
-		1 1 0.99950599108005134 1 1 1 1 1 0.99950599108005134 1 1 1 1;
-	setAttr -s 26 ".kiy[3:25]"  0 0 0 0 0 0.00082748406499710337 0 0 0 
+		10 1 10 10 10;
+	setAttr -s 30 ".kix[3:29]"  1 1 1 1 1 0.99999965763500254 1 1 1 0.99978035000435161 
+		1 1 0.99950599108005134 1 1 1 1 1 0.99950599108005134 1 1 1 1 1 1 1 1;
+	setAttr -s 30 ".kiy[3:29]"  0 0 0 0 0 0.00082748406499710337 0 0 0 
 		-0.020958333549600458 0 0 0.031428868816491595 0 0 0 0 0 0.031428868816491595 0 0 
-		0 0;
-	setAttr -s 26 ".kox[2:25]"  1 1 1 1 1 0 0.99999965763500254 1 1 1 0.99978035000435161 
-		1 1 0.99950599108005134 1 0 1 1 1 0 0 0 0 1;
-	setAttr -s 26 ".koy[2:25]"  0 0 0 0 0 0 0.00082748406499710337 0 0 
-		0 -0.020958333549600458 0 0 0.031428868816491595 0 0 0 0 0 0 0 0 0 0;
+		0 0 0 0 0 0;
+	setAttr -s 30 ".kox[2:29]"  1 1 1 1 1 0 0.99999965763500254 1 1 1 0.99978035000435161 
+		1 1 0.99950599108005134 1 0 1 1 1 0 0 0 0 1 1 1 1 1;
+	setAttr -s 30 ".koy[2:29]"  0 0 0 0 0 0 0.00082748406499710337 0 0 
+		0 -0.020958333549600458 0 0 0.031428868816491595 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTA -n "PALbot_L_IK_foot_tip_rotateZ";
 	rename -uid "F57B0E23-4197-40AD-36CE-B483277A1751";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr -s 26 ".ktv[0:25]"  0 0 3 0 6 0 9 0 12 0 18 0 21 0 24 0 100 0
+	setAttr -s 30 ".ktv[0:29]"  0 0 3 0 6 0 9 0 12 0 18 0 21 0 24 0 100 0
 		 100.00000017006802 0.4990386647587296 101 0 101.00000017006802 0.4990386647587296
 		 102 0 104 0 106 0 108 0 108.00000017006802 0.4990386647587296 109 0 110 0 112 0 114 0
-		 116 0 116.00000017006802 0.4990386647587296 200 0 224 0 300 0;
-	setAttr -s 26 ".kit[0:25]"  10 10 10 1 10 10 10 10 
+		 116 0 116.00000017006802 0.4990386647587296 200 0 224 0 300 0 312 0 313 0 314 0 316 0;
+	setAttr -s 30 ".kit[0:29]"  10 10 10 1 10 10 10 10 
 		9 9 9 9 9 9 9 9 9 1 9 9 9 9 9 10 1 
-		10;
-	setAttr -s 26 ".kot[0:25]"  10 10 1 10 10 10 10 5 
+		10 10 10 10 1;
+	setAttr -s 30 ".kot[0:29]"  10 10 1 10 10 10 10 5 
 		9 9 9 9 9 9 9 9 9 5 9 9 9 5 5 5 5 
-		10;
-	setAttr -s 26 ".kix[3:25]"  1 1 1 1 1 0.99999621743880251 1 1 1 0.99758122630766244 
-		1 1 0.99458229897432171 1 1 1 1 1 0.99458229897432171 1 1 1 1;
-	setAttr -s 26 ".kiy[3:25]"  0 0 0 0 0 0.0027504741567466575 0 0 0 -0.069510408706181401 
-		0 0 0.10395215518185866 0 0 0 0 0 0.10395215518185866 0 0 0 0;
-	setAttr -s 26 ".kox[2:25]"  1 1 1 1 1 0 0.99999621743880251 1 1 1 0.99758122630766244 
-		1 1 0.99458229897432171 1 0 1 1 1 0 0 0 0 1;
-	setAttr -s 26 ".koy[2:25]"  0 0 0 0 0 0 0.0027504741567466575 0 0 0 
-		-0.069510408706181401 0 0 0.10395215518185866 0 0 0 0 0 0 0 0 0 0;
+		10 1 10 10 10;
+	setAttr -s 30 ".kix[3:29]"  1 1 1 1 1 0.99999621743880251 1 1 1 0.99758122630766244 
+		1 1 0.99458229897432171 1 1 1 1 1 0.99458229897432171 1 1 1 1 1 1 1 1;
+	setAttr -s 30 ".kiy[3:29]"  0 0 0 0 0 0.0027504741567466575 0 0 0 -0.069510408706181401 
+		0 0 0.10395215518185866 0 0 0 0 0 0.10395215518185866 0 0 0 0 0 0 0 0;
+	setAttr -s 30 ".kox[2:29]"  1 1 1 1 1 0 0.99999621743880251 1 1 1 0.99758122630766244 
+		1 1 0.99458229897432171 1 0 1 1 1 0 0 0 0 1 1 1 1 1;
+	setAttr -s 30 ".koy[2:29]"  0 0 0 0 0 0 0.0027504741567466575 0 0 0 
+		-0.069510408706181401 0 0 0.10395215518185866 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 createNode animCurveTU -n "PALbot_L_IK_Foot_ctrl_Heel_Peel";
 	rename -uid "B29BA0AC-4FA4-1E0E-B03C-50A5B5E77C29";
 	setAttr ".tan" 10;
@@ -2962,17 +2173,17 @@ createNode animCurveTL -n "PALbot_L_IK_Foot_ctrl_translateX";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
 	setAttr -s 21 ".ktv[0:20]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
-		 100 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 -0.88 224 -0.88 300 0;
+		 100 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 -0.88 224 -0.88 300 -1;
 	setAttr -s 21 ".kit[9:20]"  9 9 9 9 1 9 9 9 
 		9 10 1 10;
 	setAttr -s 21 ".kot[8:20]"  5 9 1 9 9 9 9 9 
 		9 5 5 5 10;
 	setAttr -s 21 ".kix[13:20]"  1 1 1 1 0.97114376430516425 1 0.96981563538382454 
-		0.9634888438133874;
+		0.99928276683354167;
 	setAttr -s 21 ".kiy[13:20]"  0 0 0 0 -0.23849484072238447 0 -0.24383935975364726 
-		0.26774847870182561;
-	setAttr -s 21 ".kox[10:20]"  1 1 1 1 1 1 1 0 0 0 0.96348884381338751;
-	setAttr -s 21 ".koy[10:20]"  0 0 0 0 0 0 0 0 0 0 0.26774847870182567;
+		-0.037867557480007898;
+	setAttr -s 21 ".kox[10:20]"  1 1 1 1 1 1 1 0 0 0 0.99928276683354167;
+	setAttr -s 21 ".koy[10:20]"  0 0 0 0 0 0 0 0 0 0 -0.037867557480007898;
 createNode animCurveTL -n "PALbot_L_IK_Foot_ctrl_translateY";
 	rename -uid "DE15EC6D-4743-DB6B-97DA-AE81782C8EC6";
 	setAttr ".tan" 10;
@@ -3049,15 +2260,15 @@ createNode animCurveTA -n "PALbot_L_IK_Foot_ctrl_rotateY";
 	setAttr ".tan" 10;
 	setAttr ".wgt" no;
 	setAttr -s 21 ".ktv[0:20]"  0 0 3 0 6 0 9 0 12 0 15 0 18 0 21 0 24 0
-		 100 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 0 224 0 300 0;
+		 100 0 102 0 104 0 106 0 108 0 110 0 112 0 114 0 116 0 200 0 224 0 300 -13;
 	setAttr -s 21 ".kit[9:20]"  9 9 9 9 1 9 9 9 
 		9 10 1 10;
 	setAttr -s 21 ".kot[8:20]"  5 9 1 9 9 9 9 9 
 		9 5 5 5 10;
-	setAttr -s 21 ".kix[13:20]"  1 1 1 1 1 1 1 1;
-	setAttr -s 21 ".kiy[13:20]"  0 0 0 0 0 0 0 0;
-	setAttr -s 21 ".kox[10:20]"  1 1 1 1 1 1 1 0 0 0 1;
-	setAttr -s 21 ".koy[10:20]"  0 0 0 0 0 0 0 0 0 0 0;
+	setAttr -s 21 ".kix[13:20]"  1 1 1 1 1 1 1 0.99744295431391294;
+	setAttr -s 21 ".kiy[13:20]"  0 0 0 0 0 0 0 -0.07146714552529361;
+	setAttr -s 21 ".kox[10:20]"  1 1 1 1 1 1 1 0 0 0 0.99744295431391294;
+	setAttr -s 21 ".koy[10:20]"  0 0 0 0 0 0 0 0 0 0 -0.07146714552529361;
 createNode animCurveTA -n "PALbot_L_IK_Foot_ctrl_rotateZ";
 	rename -uid "1A156184-405E-D709-DC94-9693C55B90D5";
 	setAttr ".tan" 10;
@@ -6247,31 +5458,46 @@ createNode animCurveTA -n "PALbot_MAIN_rotateZ";
 	setAttr -s 8 ".kiy[6:7]"  0 0;
 createNode animCurveTA -n "PALbot_root_rotateX";
 	rename -uid "4A964449-46F0-3BE0-D7CF-F9BA56DDD409";
-	setAttr ".tan" 5;
+	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  0 0 24 0 100 0 116 0 200 0 224 0 300 0;
-	setAttr -s 7 ".kit[0:6]"  2 2 10 10 10 1 10;
-	setAttr -s 7 ".kot[0:6]"  2 5 5 5 5 5 10;
-	setAttr -s 7 ".kix[5:6]"  1 1;
-	setAttr -s 7 ".kiy[5:6]"  0 0;
+	setAttr -s 10 ".ktv[0:9]"  0 0 24 0 100 0 116 0 200 0 224 0 300 0 316 0
+		 324 0 332 0;
+	setAttr -s 10 ".kit[0:9]"  2 2 10 10 10 1 10 10 
+		10 1;
+	setAttr -s 10 ".kot[0:9]"  2 5 5 5 5 5 10 10 
+		10 1;
+	setAttr -s 10 ".kix[5:9]"  1 1 1 1 1;
+	setAttr -s 10 ".kiy[5:9]"  0 0 0 0 0;
+	setAttr -s 10 ".kox[9]"  1;
+	setAttr -s 10 ".koy[9]"  0;
 createNode animCurveTA -n "PALbot_root_rotateY";
 	rename -uid "95679736-4FC6-2AA9-727E-739440E2B2A1";
-	setAttr ".tan" 5;
+	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  0 0 24 0 100 0 116 0 200 0 224 0 300 0;
-	setAttr -s 7 ".kit[0:6]"  2 2 10 10 10 1 10;
-	setAttr -s 7 ".kot[0:6]"  2 5 5 5 5 5 10;
-	setAttr -s 7 ".kix[5:6]"  1 1;
-	setAttr -s 7 ".kiy[5:6]"  0 0;
+	setAttr -s 10 ".ktv[0:9]"  0 0 24 0 100 0 116 0 200 0 224 0 300 0 316 0
+		 324 0 332 0;
+	setAttr -s 10 ".kit[0:9]"  2 2 10 10 10 1 10 10 
+		10 1;
+	setAttr -s 10 ".kot[0:9]"  2 5 5 5 5 5 10 10 
+		10 1;
+	setAttr -s 10 ".kix[5:9]"  1 1 1 1 1;
+	setAttr -s 10 ".kiy[5:9]"  0 0 0 0 0;
+	setAttr -s 10 ".kox[9]"  1;
+	setAttr -s 10 ".koy[9]"  0;
 createNode animCurveTA -n "PALbot_root_rotateZ";
 	rename -uid "4BBD8D86-4753-8C96-20DD-DCB2080555FC";
-	setAttr ".tan" 5;
+	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  0 0 24 0 100 0 116 0 200 0 224 0 300 0;
-	setAttr -s 7 ".kit[0:6]"  2 2 10 10 10 1 10;
-	setAttr -s 7 ".kot[0:6]"  2 5 5 5 5 5 10;
-	setAttr -s 7 ".kix[5:6]"  1 1;
-	setAttr -s 7 ".kiy[5:6]"  0 0;
+	setAttr -s 10 ".ktv[0:9]"  0 0 24 0 100 0 116 0 200 0 224 0 300 0 316 0
+		 324 0 332 0;
+	setAttr -s 10 ".kit[0:9]"  2 2 10 10 10 1 10 10 
+		10 1;
+	setAttr -s 10 ".kot[0:9]"  2 5 5 5 5 5 10 10 
+		10 1;
+	setAttr -s 10 ".kix[5:9]"  1 1 1 1 1;
+	setAttr -s 10 ".kiy[5:9]"  0 0 0 0 0;
+	setAttr -s 10 ".kox[9]"  1;
+	setAttr -s 10 ".koy[9]"  0;
 createNode animCurveTA -n "PALbot_L_Engine_ctrl_rotateX";
 	rename -uid "E5662A71-4076-258A-92D2-ABAEC894A3CC";
 	setAttr ".tan" 5;
@@ -7317,31 +6543,47 @@ createNode animCurveTU -n "PALbot_R_HandVIS_canon_light";
 	setAttr -s 7 ".kiy[5:6]"  0 0;
 createNode animCurveTL -n "PALbot_root_translateX";
 	rename -uid "A6301B5A-4377-08C2-412D-14B3120E4CC9";
-	setAttr ".tan" 5;
+	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  0 0 24 0 100 0 116 0 200 0 224 0 300 0;
-	setAttr -s 7 ".kit[0:6]"  2 2 10 10 10 1 10;
-	setAttr -s 7 ".kot[0:6]"  2 5 5 5 5 5 10;
-	setAttr -s 7 ".kix[5:6]"  1 1;
-	setAttr -s 7 ".kiy[5:6]"  0 0;
+	setAttr -s 10 ".ktv[0:9]"  0 0 24 0 100 0 116 0 200 0 224 0 300 0 316 0
+		 324 0 332 0;
+	setAttr -s 10 ".kit[0:9]"  2 2 10 10 10 1 10 10 
+		10 1;
+	setAttr -s 10 ".kot[0:9]"  2 5 5 5 5 5 10 10 
+		10 1;
+	setAttr -s 10 ".kix[5:9]"  1 1 1 1 1;
+	setAttr -s 10 ".kiy[5:9]"  0 0 0 0 0;
+	setAttr -s 10 ".kox[9]"  1;
+	setAttr -s 10 ".koy[9]"  0;
 createNode animCurveTL -n "PALbot_root_translateY";
 	rename -uid "6A19D4ED-4325-17F5-9AD3-2F9CD4AF3325";
-	setAttr ".tan" 5;
+	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  0 0 24 0 100 0 116 0 200 0 224 0 300 0;
-	setAttr -s 7 ".kit[0:6]"  2 2 10 10 10 1 10;
-	setAttr -s 7 ".kot[0:6]"  2 5 5 5 5 5 10;
-	setAttr -s 7 ".kix[5:6]"  1 1;
-	setAttr -s 7 ".kiy[5:6]"  0 0;
+	setAttr -s 10 ".ktv[0:9]"  0 0 24 0 100 0 116 0 200 0 224 0 300 0 316 0
+		 324 13.692162310255389 332 0;
+	setAttr -s 10 ".kit[0:9]"  2 2 10 10 10 1 10 10 
+		10 1;
+	setAttr -s 10 ".kot[0:9]"  2 5 5 5 5 5 10 1 
+		10 1;
+	setAttr -s 10 ".ktl[7:9]" no yes no;
+	setAttr -s 10 ".kix[5:9]"  1 1 1 1 0.0098794889004719284;
+	setAttr -s 10 ".kiy[5:9]"  0 0 0 0 -0.99995119665864973;
+	setAttr -s 10 ".kox[7:9]"  0.0088680283494374287 1 0.016271956563234605;
+	setAttr -s 10 ".koy[7:9]"  0.99996067826349733 0 -0.99986760295031285;
 createNode animCurveTL -n "PALbot_root_translateZ";
 	rename -uid "7835DE40-46CA-A56B-7AED-1EAC63D1876B";
-	setAttr ".tan" 5;
+	setAttr ".tan" 10;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  0 0 24 0 100 0 116 0 200 0 224 0 300 0;
-	setAttr -s 7 ".kit[0:6]"  2 2 10 10 10 1 10;
-	setAttr -s 7 ".kot[0:6]"  2 5 5 5 5 5 10;
-	setAttr -s 7 ".kix[5:6]"  1 1;
-	setAttr -s 7 ".kiy[5:6]"  0 0;
+	setAttr -s 10 ".ktv[0:9]"  0 0 24 0 100 0 116 0 200 0 224 0 300 0 316 0
+		 324 0 332 0;
+	setAttr -s 10 ".kit[0:9]"  2 2 10 10 10 1 10 10 
+		10 1;
+	setAttr -s 10 ".kot[0:9]"  2 5 5 5 5 5 10 10 
+		10 1;
+	setAttr -s 10 ".kix[5:9]"  1 1 1 1 1;
+	setAttr -s 10 ".kiy[5:9]"  0 0 0 0 0;
+	setAttr -s 10 ".kox[9]"  1;
+	setAttr -s 10 ".koy[9]"  0;
 createNode animCurveTL -n "PALbot_R_hip_translateX";
 	rename -uid "198FB3AD-4D22-A743-96CB-C8941274294C";
 	setAttr ".tan" 5;
@@ -7708,8 +6950,8 @@ select -ne :time1;
 	setAttr -av -cb on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -k on ".o" 300;
-	setAttr -av -k on ".unw" 300;
+	setAttr -k on ".o" 332;
+	setAttr -av -k on ".unw" 332;
 	setAttr -av -k on ".etw";
 	setAttr -av -k on ".tps";
 	setAttr -av -k on ".tms";
