@@ -41,8 +41,11 @@ public class PlayerController : MonoBehaviour
             {
                 rb.velocity = new Vector3(0, rb.velocity.y, 0);
             }
+        }
+    }
 
-            previousVerticalVelocity = currentVerticalVelocity;
+    private void FixedUpdate() {
+        previousVerticalVelocity = currentVerticalVelocity;
             currentVerticalVelocity = rb.velocity.y;
 
             if (currentVerticalVelocity < 0 && previousVerticalVelocity >= 0){
@@ -54,7 +57,6 @@ public class PlayerController : MonoBehaviour
                 if (Grounded()) landEvent.Invoke();
                 Debug.Log("Landed");
             }
-        }
     }
 
     public void Jump(float height)

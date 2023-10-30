@@ -132,7 +132,7 @@ public class PlayerAnimController : MonoBehaviour
     }
 
     public void FaceLeft(){
-        transform.rotation = Quaternion.Euler(0, 75, 0);
+        transform.rotation = Quaternion.Euler(0, 105, 0);
     }
 
     public void Fall(){

@@ -86,7 +86,7 @@ MonoBehaviour:
   player: {fileID: 2118390527383745672}
   jumpSound: {fileID: 8300000, guid: bf65826e1f87f1f46a0eb5e2d4c80443, type: 3}
   speed: 4.5
-  jumpHeight: 15
+  jumpHeight: 20
   startToFallEvent:
     m_PersistentCalls:
       m_Calls:
@@ -486,6 +486,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1722223089735034379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272092243069194369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a102fba678a5ba44e867a8eb2abada0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 11400000, guid: 968527458413d554e8155a55e1b18cf1, type: 2}
+  respondEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2118390529191337396}
+        m_TargetAssemblyTypeName: PlayerAnimController, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2118390529191337396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,6 +646,30 @@ MonoBehaviour:
           m_StringArgument: Crouch
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2118390529191337397}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: ResetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Fall
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2118390529191337397}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: ResetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Land
+          m_BoolArgument: 0
+        m_CallState: 2
   extendEvent:
     m_PersistentCalls:
       m_Calls:
@@ -631,6 +683,30 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Extend
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2118390529191337397}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: ResetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Fall
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2118390529191337397}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: ResetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Land
           m_BoolArgument: 0
         m_CallState: 2
   fallEvent:
@@ -679,34 +755,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   gameOver: {fileID: 11400000, guid: cbf184b9bfedb89438453aab1ce0f67e, type: 2}
---- !u!114 &1722223089735034379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1272092243069194369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a102fba678a5ba44e867a8eb2abada0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  action: {fileID: 11400000, guid: 968527458413d554e8155a55e1b18cf1, type: 2}
-  respondEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2118390529191337396}
-        m_TargetAssemblyTypeName: PlayerAnimController, Assembly-CSharp
-        m_MethodName: Die
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &5220309169062134161
 MonoBehaviour:
   m_ObjectHideFlags: 0
