@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class CoordinateArray : ScriptableObject
 {
-    private CoordinateData[] coordinates = new CoordinateData[3];
+    [SerializeField] private int numberOfCoordinates = 1;
+    private CoordinateData[] coordinates = new CoordinateData[1];
 
     void OnEnable()
     {
+        coordinates = new CoordinateData[numberOfCoordinates];
         for (int i = 0; i < coordinates.Length; i++){
             coordinates[i] = new CoordinateData();
         }

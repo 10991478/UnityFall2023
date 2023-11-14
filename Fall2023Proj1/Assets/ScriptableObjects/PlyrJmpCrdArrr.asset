@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e28330d052af669418bfbac2f78cb8c9, type: 3}
   m_Name: PlyrJmpCrdArrr
   m_EditorClassIdentifier: 
-  numOfCoordinates: 3
+  numberOfCoordinates: 3
