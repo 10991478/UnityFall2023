@@ -1235,7 +1235,7 @@ MonoBehaviour:
   walkSpeed: 3
   runSpeed: 5
   jumpHeight: 15
-  playerJumpCoordinates: {fileID: 11400000, guid: 51565580ce94a2f4ca576b2e290283be, type: 2}
+  playerJumpCoordinates: {fileID: 11400000, guid: 0fda4be8d3310b546aeec6c9b9de600f, type: 2}
 --- !u!65 &1114219256
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1687,7 +1687,7 @@ MonoBehaviour:
   pressSpaceEvent:
     m_PersistentCalls:
       m_Calls: []
-  playerJumpCoordinates: {fileID: 11400000, guid: 51565580ce94a2f4ca576b2e290283be, type: 2}
+  playerJumpCoordinates: {fileID: 11400000, guid: 0fda4be8d3310b546aeec6c9b9de600f, type: 2}
 --- !u!1001 &3892628682078181650
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,10 +2,10 @@ using UnityEngine;
 
 [CreateAssetMenu]
 public class CoordinateData : ScriptableObject {
-    private Vector3 coordinateVector;
-    private bool validCoordinate = true;
+    private Vector3 coordinateVector = new Vector3(0,0,0);
+    private bool validCoordinate = false;
 
-    [SerializeField] private Vector3 distanceMargin;
+    [SerializeField] private Vector3 distanceMargin = new Vector3(1,1,1);
 
 
 //getter methods

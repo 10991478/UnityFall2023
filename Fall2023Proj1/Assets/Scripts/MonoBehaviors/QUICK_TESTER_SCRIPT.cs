@@ -17,12 +17,11 @@ using UnityEngine.Events;
 public class QUICK_TESTER_SCRIPT : MonoBehaviour
 {
     [SerializeField] private UnityEvent pressSpaceEvent;
-    [SerializeField] private CoordinateData playerJumpCoordinates;
+    [SerializeField] private CoordinateArray playerJumpCoordinates;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)){
-            playerJumpCoordinates.SetVector(transform.position);
-            playerJumpCoordinates.SetValid(true);
+            playerJumpCoordinates.SetNewCoordinate(transform.position);
             pressSpaceEvent.Invoke();
         }
     }

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8d1b863e1c956943ad7a89151a5323e, type: 3}
-  m_Name: PlayerLastJumpCoordinate
+  m_Script: {fileID: 11500000, guid: e28330d052af669418bfbac2f78cb8c9, type: 3}
+  m_Name: PlyrJmpCrdArrr
   m_EditorClassIdentifier: 
-  distanceMargin: {x: 1, y: 0, z: 0}
+  numOfCoordinates: 3

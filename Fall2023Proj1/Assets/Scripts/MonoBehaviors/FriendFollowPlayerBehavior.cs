@@ -12,7 +12,7 @@ public class FriendFollowPlayerBehavior : MonoBehaviour
     private Rigidbody rb;
     private Collider coll;
     [SerializeField] private float zOffset, walkSpeed, runSpeed, jumpHeight;
-    [SerializeField] private CoordinateData playerJumpCoordinates;
+    [SerializeField] private CoordinateArray playerJumpCoordinates;
 
     private bool outOfRange = false;
 
@@ -43,10 +43,8 @@ public class FriendFollowPlayerBehavior : MonoBehaviour
             rb.velocity = new Vector3(0, rb.velocity.y, 0);
         }
 
-
-        if (playerJumpCoordinates.WithinMarginX(transform.position.x) && playerJumpCoordinates.IsValid()){
+        if (playerJumpCoordinates.WithinAnyMarginsX(transform.position.x)){
             Jump();
-            playerJumpCoordinates.SetValid(false);
         }
     }
 
