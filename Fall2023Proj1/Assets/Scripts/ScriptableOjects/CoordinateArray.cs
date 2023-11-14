@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class CoordinateArray : ScriptableObject
 {
-    [SerializeField] private int numOfCoordinates;
-    private CoordinateData[] coordinates;
+    private CoordinateData[] coordinates = new CoordinateData[3];
 
-    private void OnValidate() {
-        coordinates = new CoordinateData[numOfCoordinates];
+    void OnEnable()
+    {
         for (int i = 0; i < coordinates.Length; i++){
             coordinates[i] = new CoordinateData();
         }
     }
 
+    public void SetNumOfCoords(int num){
+        coordinates = new CoordinateData[num];
+        for (int i = 0; i < coordinates.Length; i++){
+            coordinates[i] = new CoordinateData();
+        }
+    }
 
     public Vector3[] GetCoordinateVectors(){
         Vector3[] returnArray = new Vector3[coordinates.Length];
