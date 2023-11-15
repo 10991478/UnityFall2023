@@ -8,6 +8,11 @@ public class CoordinateData : ScriptableObject {
     [SerializeField] private Vector3 distanceMargin = new Vector3(1,1,1);
 
 
+    public CoordinateData(Vector3 margin){
+        distanceMargin = margin;
+    }
+
+
 //getter methods
     public Vector3 GetVector(){
         return coordinateVector;

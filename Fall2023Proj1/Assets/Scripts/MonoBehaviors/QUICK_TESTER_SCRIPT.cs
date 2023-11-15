@@ -20,7 +20,7 @@ public class QUICK_TESTER_SCRIPT : MonoBehaviour
     [SerializeField] private CoordinateArray playerJumpCoordinates;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)){
+        if (Input.GetKeyUp(KeyCode.Space)){
             playerJumpCoordinates.SetNewCoordinate(transform.position);
             pressSpaceEvent.Invoke();
         }

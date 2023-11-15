@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class CameraFollowPlayer : MonoBehaviour
 {
-    private GameObject target;
+    [SerializeField] private GameObject target;
     public float xRange = 15;
     public float yRange = 8;
     private float distancex, distancey;
     private Vector3 newPosition;
     public Vector3 rangeOffset;
-
-    private void Awake()
-    {
-        target = GameObject.Find("Player");
-    }
 
     private void Update()
     {

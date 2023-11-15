@@ -968,6 +968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 699d86805a16af44aaee5ad6e6ef035e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 2118390528426517503}
   xRange: 10
   yRange: 4
   rangeOffset: {x: 0, y: 1, z: 0}
@@ -1243,7 +1244,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114219254}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d7f36c2bea8929a419a1af6e4f70842c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: PlyrJmpCrdArrr
   m_EditorClassIdentifier: 
   numberOfCoordinates: 3
+  distanceMargin: {x: 1, y: 1, z: 1}

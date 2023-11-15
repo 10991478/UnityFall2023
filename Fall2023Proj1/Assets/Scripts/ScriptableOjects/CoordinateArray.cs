@@ -5,20 +5,21 @@ using UnityEngine;
 public class CoordinateArray : ScriptableObject
 {
     [SerializeField] private int numberOfCoordinates = 1;
+    [SerializeField] private Vector3 distanceMargin = new Vector3(1, 1, 1);
     private CoordinateData[] coordinates = new CoordinateData[1];
 
     void OnEnable()
     {
         coordinates = new CoordinateData[numberOfCoordinates];
         for (int i = 0; i < coordinates.Length; i++){
-            coordinates[i] = new CoordinateData();
+            coordinates[i] = new CoordinateData(distanceMargin);
         }
     }
 
     public void SetNumOfCoords(int num){
         coordinates = new CoordinateData[num];
         for (int i = 0; i < coordinates.Length; i++){
-            coordinates[i] = new CoordinateData();
+            coordinates[i] = new CoordinateData(distanceMargin);
         }
     }
 
