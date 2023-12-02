@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
 
     private float horizontalInput;
     [SerializeField] private float speed, jumpHeight;
-    private float speedMultiplier = 1;
+    [SerializeField] private FloatData speedMultiplier;
+    private float travelState = 1.0f;
 
     private float currentVerticalVelocity, previousVerticalVelocity;
     [SerializeField] private UnityEvent startToFallEvent, landEvent;
@@ -35,7 +36,7 @@ public class PlayerController : MonoBehaviour
             horizontalInput = Input.GetAxis("Horizontal");
             if (horizontalInput != 0)
             {
-                rb.velocity = new Vector3(horizontalInput * speed * speedMultiplier, rb.velocity.y, 0);
+                rb.velocity = new Vector3(horizontalInput * speed * speedMultiplier.value * travelState, rb.velocity.y, 0);
             }
             else
             {
@@ -95,7 +96,7 @@ public class PlayerController : MonoBehaviour
         coll.enabled = false;
     }
 
-    public void SetSpeedMultiplier(float mult){
-        speedMultiplier = mult;
+    public void SetTravelState(float num){
+        travelState = num;
     }
 }

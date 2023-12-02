@@ -62,10 +62,4 @@ public class IntData : ScriptableObject
     public void IncrementValue(){
         addValue(1);
     }
-
-    
-
-    public void TempDebugMethod(string words){
-        Debug.Log(words);
-    }
 }

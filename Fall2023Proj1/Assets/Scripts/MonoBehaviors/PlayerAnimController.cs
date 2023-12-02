@@ -12,6 +12,8 @@ public class PlayerAnimController : MonoBehaviour
     IDictionary<string, bool> animStates = new Dictionary<string, bool>();
 
     [SerializeField] private BoolData gameOver;
+    [SerializeField] private FloatData speedMultiplier;
+    private Animator thisAnimator;
 
     void Awake()
     {
@@ -22,6 +24,7 @@ public class PlayerAnimController : MonoBehaviour
         animStates.Add("Crouching", false);
         animStates.Add("Extending", false);
         FaceRight();
+        thisAnimator = gameObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -146,5 +149,9 @@ public class PlayerAnimController : MonoBehaviour
 
     public void Die(){
         dieEvent.Invoke();
+    }
+
+    public void SetAnimatorSpeed(){
+        thisAnimator.speed = speedMultiplier.value;
     }
 }
